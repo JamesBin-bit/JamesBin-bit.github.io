@@ -451,18 +451,41 @@
                 
 
                 
-
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-10-30
+                </div>
                 
 
                 
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    745
+                </div>
+                
 
                 
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    2 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
             </div>
         </div>
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1603996408003&di=271f9659aae7c32f4893190c954b9490&imgtype=0&src=http://imgedu.lagou.com/2024393-20200511143556231-530215527.png"></p>
+                <p><img src="https://s1.ax1x.com/2020/10/30/BYAMQO.png"></p>
+<blockquote>
+<p>微信公众号：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/TQyF-ZNotmWY2U3Ijcf12Q">零基础玩嵌入式</a><br>关注公众号获取全套嵌入式学习资源，如有更多疑问请在微信公众号中回复加群，加入嵌入式交流群和我们一起讨论交流！</p>
+</blockquote>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>前几天看到大佬们的个人博客非常喜欢也想着搭建一个属于自己的博客，现在准备将自己的博客搭建的过程及步骤分享给大家供大家学习使用！希望能够帮到也想搭建一个属于自己的个人博客！废话少说，咱们现在就开始吧！</p>
 <h2 id="博客效果展示"><a href="#博客效果展示" class="headerlink" title="博客效果展示"></a>博客效果展示</h2><p>我的主页： <a target="_blank" rel="noopener" href="http://www.jamesbin.com/">点击查看博客效果</a>.</p>
 <h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><p><strong>需要的软件</strong><br>系统：window10家庭版<br>git：注册jithub账号，下载并安装jit<br>nodejs：下载并安装nodejs</p>
@@ -472,8 +495,16 @@
 <p>Hexo的配置文件_config.yml分为两种，一种是站点配置文件，也就是站点根目录下的_config.yml配置文件，另一个是主题配置文件，位于theme文件夹中对应主题的文件夹下的_config.yml。</p>
 <p>首先在电脑安装git环境，git的安装方式有很多，这里推荐安装msys2环境，里面自带git相关的工具。</p>
 <p>然后安装nodejs软件，从官网下载msi安装包，一路next即可，会自动将node和npm这两个命令添加到PATH环境变量中。</p>
-<p>nodejs安装完成后的检验操作是在das窗口下输入命令 <code>node -v</code>和<code>npm -v</code>这两个命令就是查看版本信息的。如下图所示:</p>
-<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/BYAiyF"><img src="https://s1.ax1x.com/2020/10/30/BYAiyF.png" alt="BYAiyF.png"></a></p>
+<p>nodejs安装完成后的检验操作是在das窗口下输入命令 <code>node -v</code>和<code>npm -v</code>这两个命令就是查看版本信息的。如下图所示:<br><img src="https://s1.ax1x.com/2020/10/30/BYE48P.png" alt="点击查看大图" title="点击查看大图"></p>
+<p>git安装完成后的检验操作是：鼠标右键 效果如下图所示</p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/68f1dc9974d67cb63967e46123ae4fe5.png#pic_center" alt="在这里插入图片描述"></p>
+<h2 id="安装hexo基本框架"><a href="#安装hexo基本框架" class="headerlink" title="安装hexo基本框架"></a>安装hexo基本框架</h2><p><strong>第一步：新建文件夹</strong><br><img src="https://s1.ax1x.com/2020/10/30/BYVEP1.png"></p>
+<p><strong>第二步：安装hexo基础框架</strong><br>第一步完成后，会出现一个命名窗口。输入如下命令：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//第一条   这是安装hexo的基础框架</span></span><br><span class="line">npm install -g hexo</span><br><span class="line"></span><br><span class="line"><span class="comment">//第二条   这是初始化hexo框架 这个可能会比较慢</span></span><br><span class="line">hexo init</span><br><span class="line"></span><br><span class="line"><span class="comment">//第三条 安装所需要的组件</span></span><br><span class="line">npm install</span><br><span class="line"></span><br><span class="line"><span class="comment">//第四条 编译生成静态页面</span></span><br><span class="line">hexo g</span><br><span class="line"></span><br><span class="line"><span class="comment">//第五条 启动本地服务</span></span><br><span class="line">hexo s</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>第五条命名完成后，可以首次体验一下，如下图<br><img src="https://upload-images.jianshu.io/upload_images/18313053-9e36998e629d5fdd.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1200/format/webp"></p>
+<p>浏览器中的效果如下：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/18313053-7deab09a58f4396a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/431/format/webp"></p>
+<p>##后续配置<br>到此我们的hexo就已经搭建完成了，下篇恩张让我们一起来看一下如何将本地博客上传到jithub中去，让其他小伙伴也能看到我们的网站！</p>
 
             </div>
             <hr/>
@@ -751,8 +782,10 @@ gitment.render('gitment-content');
                     <div class="summary block-with-text">
                         
                             
-前言前几天看到大佬们的个人博客非常喜欢也想着搭建一个属于自己的博客，现在准备将自己的博客搭建的过程及步骤分享给大家供大家学习使用！希望能够帮到也想搭建一个属于自己的个人博客！废话少说，咱们现在就开始吧！
-博客效果展示我的主页： 点击查看博
+
+微信公众号：零基础玩嵌入式关注公众号获取全套嵌入式学习资源，如有更多疑问请在微信公众号中回复加群，加入嵌入式交流群和我们一起讨论交流！
+
+前言前几天看到大佬们的个人博客非常喜欢也想着搭建一个属于自己的博客，现在准备将自己的博客搭建的过程
                         
                     </div>
                     <div class="publish-info">
@@ -997,6 +1030,9 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">820</span>&nbsp;字
             
             
             
