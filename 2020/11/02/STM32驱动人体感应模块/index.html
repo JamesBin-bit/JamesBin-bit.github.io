@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="超声波测距+python数据处理+可视化实时图像绘制, 零基础玩嵌入式">
+    <meta name="keywords" content="STM32驱动人体感应模块, 零基础玩嵌入式">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>超声波测距+python数据处理+可视化实时图像绘制 | JamesBin</title>
+    <title>STM32驱动人体感应模块 | JamesBin</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">超声波测距+python数据处理+可视化实时图像绘制</h1>
+                    <h1 class="description center-align post-title">STM32驱动人体感应模块</h1>
                 </div>
             </div>
         </div>
@@ -430,8 +430,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Python%E9%A1%B9%E7%9B%AE/">
-                                <span class="chip bg-color">Python项目</span>
+                            <a href="/tags/STM32%E9%A1%B9%E7%9B%AE%E5%AE%9E%E9%AA%8C/">
+                                <span class="chip bg-color">STM32项目实验</span>
                             </a>
                         
                     </div>
@@ -442,8 +442,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Python%E5%AE%9E%E6%88%98%E5%88%86%E4%BA%AB/" class="post-category">
-                                Python实战分享
+                            <a href="/categories/STM32%E5%B0%8F%E5%AE%9E%E9%AA%8C%E5%88%86%E4%BA%AB/" class="post-category">
+                                STM32小实验分享
                             </a>
                         
                     </div>
@@ -469,7 +469,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.8k
+                    1.9k
                 </div>
                 
 
@@ -491,53 +491,22 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><img src="https://img-blog.csdnimg.cn/20200408080339356.gif#pic_center"></p>
-<p>本文介绍的是使用arduino驱动超声波测量距离，并通过串口将数据发送给python，从而进行数据处理，处理结果如图所示。</p>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>超声波模块+arduino开发板+杜邦线数根+python开发环境</p>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>首先使用arduino车辆距离，通过串口将数据发送给python代码进行数据处理并绘制成图像进行实时显示。</p>
-<h2 id="超声波模块介绍"><a href="#超声波模块介绍" class="headerlink" title="超声波模块介绍"></a>超声波模块介绍</h2><p><img src="https://img-blog.csdnimg.cn/20200408081116627.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTcyODMy,size_16,color_FFFFFF,t_70"><br>如上图所示，VCC 供5V电源， GND 为地线，TRIG 触发控制信号输入，ECHO 回响信号输出等四个接口端。</p>
-<p>2、电路连接</p>
-<p>接线比较简单，按照如下顺序连线即可：<img src="https://img-blog.csdnimg.cn/20200408081147295.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTcyODMy,size_16,color_FFFFFF,t_70"></p>
-<p>3、程序编写</p>
-<p>根据模块的原理来进行代码编写，超声测距时的操作时序如下：<img src="https://img-blog.csdnimg.cn/20200408081218877.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTcyODMy,size_16,color_FFFFFF,t_70"></p>
-<p>以上时序图表明你只需要提供一个 10uS 以上脉冲触发信号，该模块内部将发出 8 个 40kHz 周期电平并检测回波。一旦检测到有</p>
-<p>回波信号则输出回响信号。回响信号的脉冲宽度与所测的距离成正比。由此通过发射信号到收到的回响信号时间间隔可以计算得</p>
-<p>到距离。公式：uS/58=厘米或者 uS/148=英寸；或是：距离=高电平时间*声速（340M/S）/2；建议测量周期为 60ms 以上，以</p>
-<p>防止发射信号对回响信号的影响。</p>
-<p><strong>注意：</strong><br>1、此模块不宜带电连接，若要带电连接，则先让模块的 GND 端先连接，否则会影响模块的正常工作。</p>
-<p>2、测距时，被测物体的面积不少于 0.5 平方米且平面尽量要求平整，否则影响测量的结果。</p>
-<p>编写代码如下：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">*    文件: 超声测距.ino      by 零知实验室([url=http://www.lingzhilab.com]www.lingzhilab.com[/url])</span></span><br><span class="line"><span class="comment">*    -^^- 零知开源，让电子制作变得更简单！ -^^-</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SR04_TRIG        9</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SR04_ECHO        10</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">// the setup routine runs once when you press reset:</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setup</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// put your setup code here, to run once:</span></span><br><span class="line">         </span><br><span class="line">        pinMode(SR04_TRIG, OUTPUT);</span><br><span class="line">        pinMode(SR04_ECHO, INPUT);</span><br><span class="line">         </span><br><span class="line">        Serial.begin(<span class="number">9600</span>);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// the loop routine runs over and over again forever:</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">loop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// put your main code here, to run repeatedly:</span></span><br><span class="line">         </span><br><span class="line">        <span class="keyword">int</span> distance = getDistance();</span><br><span class="line">         </span><br><span class="line">        Serial.print(<span class="string">&quot;distance = &quot;</span>);</span><br><span class="line">        Serial.println(distance);</span><br><span class="line">         </span><br><span class="line">        delay(<span class="number">300</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="serial库的安装"><a href="#serial库的安装" class="headerlink" title="serial库的安装"></a>serial库的安装</h2><p>安装 pip install serial。下载了一会安装好了，再运行，还是提示同样的错误。上网查了一下，应该安装 pip install pyserial。</p>
-<p><img src="https://img-blog.csdnimg.cn/20200408082440850.png"></p>
-<p>如果上述方法安装失败，可能需要下载下来再安装。</p>
-<p>在 <a target="_blank" rel="noopener" href="https://pypi.org/project/pyserial/#files">https://pypi.org/project/pyserial/#files</a>     中，有<img src="https://img-blog.csdnimg.cn/2020040808251081.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTcyODMy,size_16,color_FFFFFF,t_70"></p>
-<p>Windows下下载这个wheel格式的文件。关于wheel文件<br>如果你已经安装了pip，那么你需要把它升级到最新版本。<br>以管理员身份运行cmd<br>转到Python安装目录的Scripts目录下： </p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">cd C:\Program Files\Python36\Scripts</span><br><span class="line">pip install wheel</span><br><span class="line">pip install 路径\文件名.whl： </span><br><span class="line">pip install C:\Users\<span class="number">0</span>AQZ0\Downloads\matplotlib<span class="number">-2.1</span><span class="number">.2</span>-cp27-cp27m-win_amd64.whl</span><br></pre></td></tr></table></figure>
-
-<p>以上经验来源于：EmbededDriver的博客<a target="_blank" rel="noopener" href="https://blog.csdn.net/u012308586/article/details/89449004">https://blog.csdn.net/u012308586/article/details/89449004</a></p>
-<h2 id="matplotlib库的安装"><a href="#matplotlib库的安装" class="headerlink" title="matplotlib库的安装"></a>matplotlib库的安装</h2><p><strong>一、一般方法</strong><br>1.Win+R输入cmd进入到CMD窗口下，执行python -m pip install -U pip setuptools进行升级。<br><img src="https://img-blog.csdnimg.cn/20200408083252381.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTcyODMy,size_16,color_FFFFFF,t_70"></p>
-<p>2.输入python -m pip install matplotlib进行自动的安装，系统会自动下载安装包<img src="https://img-blog.csdnimg.cn/20200408083306321.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTcyODMy,size_16,color_FFFFFF,t_70"><br>3.进入到python idle中，运行import matplotlib，如下图所示，如果没有报错，就证明安装成果。<img src="https://img-blog.csdnimg.cn/20200408083330444.png"><br>输入以下代码运行成果证明安装没问题</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">labels=<span class="string">&#x27;frogs&#x27;</span>,<span class="string">&#x27;hogs&#x27;</span>,<span class="string">&#x27;dogs&#x27;</span>,<span class="string">&#x27;logs&#x27;</span></span><br><span class="line">sizes=<span class="number">15</span>,<span class="number">20</span>,<span class="number">45</span>,<span class="number">10</span></span><br><span class="line">colors=<span class="string">&#x27;yellowgreen&#x27;</span>,<span class="string">&#x27;gold&#x27;</span>,<span class="string">&#x27;lightskyblue&#x27;</span>,<span class="string">&#x27;lightcoral&#x27;</span></span><br><span class="line">explode=<span class="number">0</span>,<span class="number">0.1</span>,<span class="number">0</span>,<span class="number">0</span></span><br><span class="line">plt.pie(sizes,explode=explode,labels=labels,colors=colors,autopct=<span class="string">&#x27;%1.1f%%&#x27;</span>,shadow=<span class="literal">True</span>,startangle=<span class="number">50</span>)</span><br><span class="line">plt.axis(<span class="string">&#x27;equal&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/20200408083405941.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTcyODMy,size_16,color_FFFFFF,t_70"></p>
-<p>以上方法来源于：猪猪侠喜欢躲猫猫的博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/zzx2016zzx/article/details/83099583?depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1&utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1">最简单的matplotlib安装教程</a><br><strong>二、特殊方法</strong><br>我建议大家用exe文件安装matplotlib，我使用setuptools安装，没安装成功，提示一堆错误。所以我推荐还是exe安装，我把matplotlib的exe安装文件列表写在下面的参考资料里。你找到对应版本的下载就可以，这里是安装过程：<br>1、首先，我们下载了适合自己的版本<br><img src="https://img-blog.csdnimg.cn/20200408082855429.png"><br>2、打开它，就会看到安装界面，点击下一步<br><img src="https://img-blog.csdnimg.cn/20200408082909145.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTcyODMy,size_16,color_FFFFFF,t_70"></p>
-<p>3、这里，输入python的安装目录，点击下一步<img src="https://img-blog.csdnimg.cn/20200408082923734.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTcyODMy,size_16,color_FFFFFF,t_70"><br>4、安装过程的截图<img src="https://img-blog.csdnimg.cn/20200408082937477.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTcyODMy,size_16,color_FFFFFF,t_70"><br>5、现在就安装好了，引入一下，看看是否出现了错误，没有错误就说明安装成功。<br><img src="https://img-blog.csdnimg.cn/20200408082952182.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTcyODMy,size_16,color_FFFFFF,t_70"><br><strong>错误参考：</strong></p>
-<blockquote>
-<p>如果提示错误：ImportError: matplotlib requires dateutil，你可以看这篇文章：<a target="_blank" rel="noopener" href="http://jingyan.baidu.com/article/aa6a2c14d5aa7f0d4c19c4e2.html">http://jingyan.baidu.com/article/aa6a2c14d5aa7f0d4c19c4e2.html</a></p>
-</blockquote>
-<blockquote>
-<p>如果提示错误：ImportError: matplotlib requires<br>pyparsing，你可以看这篇文章：<a target="_blank" rel="noopener" href="http://jingyan.baidu.com/article/e4d08ffdd3b9690fd2f60de2.html">http://jingyan.baidu.com/article/e4d08ffdd3b9690fd2f60de2.html</a></p>
-</blockquote>
-<p>以上经验来源于百度经验：Python教程：[55]matplotlib安装下载方法<a target="_blank" rel="noopener" href="https://jingyan.baidu.com/article/154b46315523b428ca8f41e2.html">https://jingyan.baidu.com/article/154b46315523b428ca8f41e2.html</a></p>
-<h2 id="python读取串口数据代码"><a href="#python读取串口数据代码" class="headerlink" title="python读取串口数据代码"></a>python读取串口数据代码</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> serial</span><br><span class="line"> </span><br><span class="line">ser=serial.Serial(<span class="string">&quot;COM3&quot;</span>,<span class="number">115200</span>,timeout=<span class="number">0.5</span>)	<span class="comment">#打开串口</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">while</span> (<span class="number">1</span>):</span><br><span class="line">	ch=ser.read()</span><br><span class="line">	str1=ch.decode(<span class="string">&quot;iso-8859-15&quot;</span>)	<span class="comment">#bytes转str</span></span><br><span class="line"> </span><br><span class="line">	<span class="keyword">if</span>(str1):	<span class="comment">#判断数据是否为空，很重要</span></span><br><span class="line">		l=<span class="built_in">ord</span>(str1)		<span class="comment">#str转int，方便数据计算和处理</span></span><br><span class="line">		print(<span class="string">&quot;%x&quot;</span> % l)	</span><br><span class="line"> </span><br><span class="line">	<span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
-<h2 id="python进行图像绘制的程序代码"><a href="#python进行图像绘制的程序代码" class="headerlink" title="python进行图像绘制的程序代码"></a>python进行图像绘制的程序代码</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">ax = []                    <span class="comment"># 定义一个 x 轴的空列表用来接收动态的数据</span></span><br><span class="line">ay = []                    <span class="comment"># 定义一个 y 轴的空列表用来接收动态的数据</span></span><br><span class="line">plt.ion()                  <span class="comment"># 开启一个画图的窗口</span></span><br><span class="line">i=<span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> i&lt;<span class="number">1000</span>:</span><br><span class="line">	<span class="comment">#print(b)</span></span><br><span class="line">	<span class="keyword">if</span> b == <span class="string">&quot;&quot;</span>:</span><br><span class="line">		b = <span class="number">0</span></span><br><span class="line">		<span class="comment">#print(b)</span></span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">		b = <span class="built_in">float</span>(b)</span><br><span class="line">		<span class="comment">#print(b)</span></span><br><span class="line"></span><br><span class="line">		ax.append(i)           <span class="comment"># 添加 i 到 x 轴的数据中</span></span><br><span class="line">		i=i+<span class="number">1</span></span><br><span class="line">		ay.append(b)        <span class="comment"># 添加 i 的平方到 y 轴的数据中</span></span><br><span class="line">		plt.clf()             		 <span class="comment"># 清除之前画的图</span></span><br><span class="line">		plt.plot(ax,ay)        <span class="comment"># 画出当前 ax 列表和 ay 列表中的值的图形</span></span><br><span class="line">		plt.pause(<span class="number">0.1</span>)         <span class="comment"># 暂停一秒</span></span><br><span class="line">		plt.ioff()             <span class="comment"># 关闭画图的窗口</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>绘制的图像如下图<img src="https://img-blog.csdnimg.cn/20200408082010760.gif#pic_center"></p>
-<h2 id="整体代码"><a href="#整体代码" class="headerlink" title="整体代码"></a>整体代码</h2><p><strong>arduino代码：</strong></p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> TrgPin = A0;</span><br><span class="line"><span class="keyword">int</span> EcoPin = A1;</span><br><span class="line"><span class="keyword">float</span> dist;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setup</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;   </span><br><span class="line">  Serial.begin(<span class="number">9600</span>);</span><br><span class="line">  <span class="comment">//设置TrgPin为输出状态</span></span><br><span class="line">  pinMode(TrgPin, OUTPUT);</span><br><span class="line">  <span class="comment">// 设置EcoPin为输入状态</span></span><br><span class="line">  pinMode(EcoPin, INPUT);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">loop</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  digitalWrite(TrgPin, LOW);</span><br><span class="line">  delayMicroseconds(<span class="number">8</span>);</span><br><span class="line">  digitalWrite(TrgPin, HIGH);</span><br><span class="line">  <span class="comment">// 维持10毫秒高电平用来产生一个脉冲</span></span><br><span class="line">  delayMicroseconds(<span class="number">10</span>);</span><br><span class="line">  digitalWrite(TrgPin, LOW);</span><br><span class="line">  <span class="comment">// 读取脉冲的宽度并换算成距离</span></span><br><span class="line">  dist = pulseIn(EcoPin, HIGH) / <span class="number">58.00</span>;</span><br><span class="line">  Serial.print(<span class="string">&quot;Distance:&quot;</span>);</span><br><span class="line">  Serial.print(dist);</span><br><span class="line">  Serial.println(<span class="string">&quot;cm&quot;</span>);</span><br><span class="line">  delay(<span class="number">300</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>python代码：</strong></p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot as plt</span><br><span class="line"><span class="keyword">import</span> serial</span><br><span class="line"></span><br><span class="line">serialPort = <span class="string">&quot;COM4&quot;</span>  # 串口</span><br><span class="line">baudRate = <span class="number">9600</span>  # 波特率</span><br><span class="line">ser = serial.Serial(serialPort, baudRate, timeout=<span class="number">0.1</span>)</span><br><span class="line"><span class="meta">#print(<span class="meta-string">&quot;参数设置：串口=%s ，波特率=%d&quot;</span> % (serialPort, baudRate))</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ax = []                    # 定义一个 x 轴的空列表用来接收动态的数据</span><br><span class="line">ay = []                    # 定义一个 y 轴的空列表用来接收动态的数据</span><br><span class="line">plt.ion()                  # 开启一个画图的窗口</span><br><span class="line">i=<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> i&lt;<span class="number">1000</span>:</span><br><span class="line">	str1 = ser.readline()</span><br><span class="line">	str1 = str(str1)</span><br><span class="line">	b = str1.lstrip(<span class="string">&quot;b&#x27;&quot;</span>)</span><br><span class="line">	b = b.lstrip(<span class="string">&quot;Distance:&quot;</span>)</span><br><span class="line">	b = b.rstrip(<span class="string">&quot;&#x27;&quot;</span>)</span><br><span class="line">	b = b.replace(&#x27;\\n&#x27;, &#x27;&#x27;).replace(&#x27;\\r&#x27;, &#x27;&#x27;)</span><br><span class="line">	b = b.lstrip()</span><br><span class="line">	b = b.replace(&#x27;cm&#x27;, &#x27;&#x27;)</span><br><span class="line">	b = b.lstrip()</span><br><span class="line">	<span class="meta">#print(b)</span></span><br><span class="line">	<span class="keyword">if</span> b == <span class="string">&quot;&quot;</span>:</span><br><span class="line">		b = <span class="number">0</span></span><br><span class="line">		<span class="meta">#print(b)</span></span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">		b = <span class="keyword">float</span>(b)</span><br><span class="line">		<span class="meta">#print(b)</span></span><br><span class="line"></span><br><span class="line">		ax.append(i)           # 添加 i 到 x 轴的数据中</span><br><span class="line">		i=i+<span class="number">1</span></span><br><span class="line">		ay.append(b)        # 添加 i 的平方到 y 轴的数据中</span><br><span class="line">		plt.clf()             		 # 清除之前画的图</span><br><span class="line">		plt.plot(ax,ay)        # 画出当前 ax 列表和 ay 列表中的值的图形</span><br><span class="line">		plt.pause(<span class="number">0.1</span>)         # 暂停一秒</span><br><span class="line">		plt.ioff()             # 关闭画图的窗口</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="number">1</span>:</span><br><span class="line">	print(<span class="string">&quot;处理完毕！&quot;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>以上就是本文的全部内容，关注我学习更多知识<img src="https://img-blog.csdnimg.cn/20200417225755844.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTcyODMy,size_16,color_FFFFFF,t_70#pic_center" alt="我的微信公众号"></p>
+                <p><strong>热释电效应</strong></p>
+<p>在某些绝缘物质中,由于温度的变化引起极化状态改变的现象称为热释电效应。能实现热释电效应的物质被称为热电体。热电体物质有硫酸三甘肽（TGS）、铁电钛酸钡、电气石和蔗糖等。这一现象早在2300年前就被人们发现了，但对它的研究则始于18世纪。现在它成为固体物理中最活跃的研究领域之一。因为铁电体的热释电系数比一般热电体大得多，故成为应用广泛的热电体材料，除TGS及其衍生物外，铁电陶瓷（如PZT、PLZT等）成为易于通过组份改变控制性能、适于批量生产、价廉的实用型热电材料。</p>
+<p>热释电效应在近10年被用于热释电红外探测器中，广泛地用于辐射和非接触式温度测量、红外光谱测量、激光参数测量、工业自动控制、空间技术、红外摄像中。我国利用ATGSAS晶体制成的红外摄像管已开始出口国外。其温度响应率达到4～5μA/℃，温度分辨率小于0.2℃，信号灵敏度高，图像清晰度和抗强光干扰能力也明显地提高，且滞后较小。此外，由于生物体中也存在热释电现象，故可预期热释电效应将在生物，乃至生命过程中有重要的应用。<img src="https://img-blog.csdnimg.cn/20200414214308608.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTcyODMy,size_16,color_FFFFFF,t_70"><img src="https://img-blog.csdnimg.cn/20200414214440660.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTcyODMy,size_16,color_FFFFFF,t_70"><br><img src="https://img-blog.csdnimg.cn/20200414214448142.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTcyODMy,size_16,color_FFFFFF,t_70"><br><img src="https://img-blog.csdnimg.cn/20200414214500779.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTcyODMy,size_16,color_FFFFFF,t_70"><br><img src="https://img-blog.csdnimg.cn/20200414214511872.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTcyODMy,size_16,color_FFFFFF,t_70"><br>热释电红外传感器在结构上引入场效应管，其目的在于完成阻抗变换。由于热电元输出的是电荷信号，并不能直接使用，因而需要用电阻将其转换为电压形式。故引入的N沟道结型场效应管应接成共漏形式来完成阻抗变换。热释电红外传感器由传感探测元、干涉滤光片和场效应管匹配器三部分组成。设计时应将高热电材料制成一定厚度的薄片，并在它的两面镀上金属电极，然后加电对其进行极化，这样便制成了热释电探测元。<img src="https://img-blog.csdnimg.cn/20200414214528498.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTcyODMy,size_16,color_FFFFFF,t_70"><br><img src="https://img-blog.csdnimg.cn/20200414214537830.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTcyODMy,size_16,color_FFFFFF,t_70"><br>菲涅尔透镜利用透镜的特殊光学原理，在探测器前方产生一个交替变化的“盲区”和“高灵敏区”，以提高它的探测接收灵敏度。当有人从透镜前走过时，人体发出的红外线就不断地交替从“盲区”进入“高灵敏区”，这样就使接收到的红外信号以忽强忽弱的脉冲形式输入，从而强化其能量幅度。</p>
+<p>人体辐射的红外线中心波长为9<del>10–um，而探测元件的波长灵敏度在0.2</del>20–um范围内几乎稳定不变。在传感器顶端开设了一个装有滤光镜片的窗口，这个滤光片可通过光的波长范围为7~10–um，正好适合于人体红外辐射的探测，而对其它波长的红外线由滤光片予以吸收，这样便形成了一种专门用作探测人体辐射的红外线传感器。</p>
+<p><img src="https://img-blog.csdnimg.cn/20200414214553553.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTcyODMy,size_16,color_FFFFFF,t_70"><br>热释电人体红外传感器的特点是，它只在由于外界的辐射而引起本身温度变化时，才给出一个相应的电信号，当温度的变化趋于稳定后，就不再有信号输出。所以，热释电信号与它本身的温度变化率成正比，即热释电传感器只对运动的人体敏感。通常，敏感单元材料阻抗非常高，因此要用场效应管进行阻抗变换后才能实际使用。电路中高阻值电阻Rg 的作用是释放栅极电荷，使场效应管正常工作；采用源极输出时，要外接源极电阻Rs，源极电压约为0.4 ～ l.0V。制成敏感单元的PZT（ 锆钛酸铅） 是一种光谱材料，能探测各种波长辐射。为了使传感器对人体最敏感，而对太阳、电灯光等有抗干扰性，传感器采用了滤光片做窗口。滤光片使人体辐射的红外线最强的波长正好落在滤光窗相应波长的中心处，所以滤光窗能有效地让人体所辐射的红外线通过，而阻止太阳光、灯光等可见光中的红外线通过，以免引起干扰。为提高传感器的灵敏度，可在传感器前1 ～ 5cm处放置菲涅尔透镜，使探测距离从一般的2m 提高到10 至20m。在实验室试验时，可不加菲涅尔透镜。在实际应用中，传感器往往需要预热，这是由传感器本身决定的。一般被动红外探测器需要一分钟左右的预热时间。</p>
+<p><strong>技术参数</strong><br>1.工作电压：DC 2.7-12V；<br>2.静态功耗：＜0.1mA；<br>3.延时时间:2秒；<br>4.封锁时间:2秒；<br>5.触发方式:可重复；<br>6.感应范围:≤100度锥角,3-5米；（需根据具体的透镜）<br>7.工作温度:-20 - +60℃<br>8.PCB外形尺寸:10mm*8mm<br>9.模块透镜：小透镜</p>
+<p>功能特点<br>a、 超小体积，灵敏度高，可靠性强，超低电压工作模式。<br>b、抗干扰性增强，内部采用数字信号处理，直接高低电平输出。<br>c、 全自动感应：人进入其感应范围则输出高电平，人离开感应范围则自动延时关闭高电平，输出低电平。<br>d、可重复触发方式：即感应输出高电平后，在延时时间段内，如果有人体在其感应范围活动，其输出将一直保持高电平，直到人离开后延时，才变为低电平（即：感应模块检测到人体的每一次活动后会自动顺延一个延时时间段，并且以最后一次活动的时间为延时时间的起始点)。</p>
+<p>模块的VOUT脚输出的是开关量，有人接近感应模块时，输出高电平，人离开后恢复成低电平。所以，可接单片机的任何一个IO脚都行，可采用查询法，查询所接引脚的状态，就知道VOUT脚是高电，还是低电平，从而判是否有人接近了。<img src="https://img-blog.csdnimg.cn/20200414214647509.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTcyODMy,size_16,color_FFFFFF,t_70"></p>
+<h2 id="程序"><a href="#程序" class="headerlink" title="程序"></a>程序</h2><p>main函数</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;stm32f10x.h&quot;</span>   <span class="comment">// Ïàµ±ÓÚ51µ¥Æ¬»úÖÐµÄ  #include &lt;reg51.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;usart.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;bsp_hc_sr501.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;bsp_led.h&quot;</span> </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;bsp_systick.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//¶¨ÒåÒ»¸öÈ«¾Ö±äÁ¿a£¬½«#include &quot;stm32f10x_it.h&quot;ÖÐµÄ²ÎÊý´«Èë</span></span><br><span class="line"><span class="keyword">extern</span> <span class="keyword">int</span> a;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// À´µ½ÕâÀïµÄÊ±ºò£¬ÏµÍ³µÄÊ±ÖÓÒÑ¾­±»ÅäÖÃ³É72M¡£</span></span><br><span class="line"> USART_Config();		</span><br><span class="line"> LED_GPIO_Config();</span><br><span class="line">	EXTI_SR501_Config();</span><br><span class="line">	</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;»¶Ó­Ê¹ÓÃÈËÌå¸ÐÓ¦Ä£¿é\n&quot;</span>);	</span><br><span class="line">	</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">&#123;</span><br><span class="line">	</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;³É¹¦\n&quot;</span>);</span><br><span class="line">	SysTick_Delay_ms(<span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>.c</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;bsp_hc_sr501.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;usart.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">NVIC_Configuration</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  NVIC_InitTypeDef NVIC_InitStructure;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">/* ÅäÖÃNVICÎªÓÅÏÈ¼¶×é1 */</span></span><br><span class="line">  NVIC_PriorityGroupConfig(NVIC_PriorityGroup_1);</span><br><span class="line">  </span><br><span class="line">  <span class="comment">/* ÅäÖÃÖÐ¶ÏÔ´£º°´¼ü1 */</span></span><br><span class="line">  NVIC_InitStructure.NVIC_IRQChannel = SR501_OUT_EXTI_IRQ;</span><br><span class="line">  <span class="comment">/* ÅäÖÃÇÀÕ¼ÓÅÏÈ¼¶ */</span></span><br><span class="line">  NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = <span class="number">1</span>;</span><br><span class="line">  <span class="comment">/* ÅäÖÃ×ÓÓÅÏÈ¼¶ */</span></span><br><span class="line">  NVIC_InitStructure.NVIC_IRQChannelSubPriority = <span class="number">1</span>;</span><br><span class="line">  <span class="comment">/* Ê¹ÄÜÖÐ¶ÏÍ¨µÀ */</span></span><br><span class="line">  NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;</span><br><span class="line">  NVIC_Init(&amp;NVIC_InitStructure);</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">EXTI_SR501_Config</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	GPIO_InitTypeDef GPIO_InitStructure; </span><br><span class="line">	EXTI_InitTypeDef EXTI_InitStructure;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/*¿ªÆô°´¼üGPIO¿ÚµÄÊ±ÖÓ*/</span></span><br><span class="line">	RCC_APB2PeriphClockCmd(SR501_OUT_GPIO_CLK,ENABLE);</span><br><span class="line">												</span><br><span class="line">	<span class="comment">/* ÅäÖÃ NVIC ÖÐ¶Ï*/</span></span><br><span class="line">	NVIC_Configuration();</span><br><span class="line">	</span><br><span class="line"><span class="comment">/*--------------------------GPIOÅäÖÃ-----------------------------*/</span></span><br><span class="line">	<span class="comment">/* Ñ¡Ôñ°´¼üÓÃµ½µÄGPIO */</span>	</span><br><span class="line">  GPIO_InitStructure.GPIO_Pin = SR501_OUT_GPIO_PIN;</span><br><span class="line">  <span class="comment">/* ÅäÖÃÎª¸¡¿ÕÊäÈë */</span>	</span><br><span class="line">  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPD ;</span><br><span class="line">  GPIO_Init(SR501_OUT_GPIO_PORT, &amp;GPIO_InitStructure);</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Ñ¡ÔñEXTIµÄÐÅºÅÔ´ */</span></span><br><span class="line">  GPIO_EXTILineConfig(SR501_OUT_EXTI_PORTSOURCE, SR501_OUT_EXTI_PINSOURCE);</span><br><span class="line">  EXTI_InitStructure.EXTI_Line = SR501_OUT_EXTI_LINE;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">/* EXTIÎªÖÐ¶ÏÄ£Ê½ */</span></span><br><span class="line">  EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;</span><br><span class="line">	<span class="comment">/* ÉÏÉýÑØÖÐ¶Ï */</span></span><br><span class="line">  EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Rising;</span><br><span class="line">  <span class="comment">/* Ê¹ÄÜÖÐ¶Ï */</span>	</span><br><span class="line">  EXTI_InitStructure.EXTI_LineCmd = ENABLE;</span><br><span class="line">  EXTI_Init(&amp;EXTI_InitStructure);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>.h文件</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> __BSPHC_SR501_H</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> __BSPHC_SR501_H</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;stm32f10x.h&quot;</span> </span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//Òý½Å¶¨Òå</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SR501_OUT_GPIO_PORT         GPIOA</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SR501_OUT_GPIO_CLK          (RCC_APB2Periph_GPIOA|RCC_APB2Periph_AFIO)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SR501_OUT_GPIO_PIN          GPIO_Pin_4</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SR501_OUT_EXTI_PORTSOURCE   GPIO_PortSourceGPIOA</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SR501_OUT_EXTI_PINSOURCE    GPIO_PinSource4</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SR501_OUT_EXTI_LINE         EXTI_Line4</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SR501_OUT_EXTI_IRQ          EXTI4_IRQn</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SR501_IRQHandler            EXTI4_IRQHandler</span></span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">EXTI_SR501_Config</span><span class="params">(<span class="keyword">void</span>)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">HC_SR_GPIO_Config</span><span class="params">(<span class="keyword">void</span>)</span></span>; </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">HC_SR_RECEIVE</span><span class="params">(<span class="keyword">void</span>)</span></span>;	</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">/*__BSP_HC_SR501_H*/</span></span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20200414214912284.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTcyODMy,size_16,color_FFFFFF,t_70"></p>
+<p><img src="https://img-blog.csdnimg.cn/202004172257203.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTcyODMy,size_16,color_FFFFFF,t_70#pic_center"></p>
 
             </div>
             <hr/>
@@ -563,7 +532,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://jamesbin-bit.github.io/2020/11/02/%E8%B6%85%E5%A3%B0%E6%B3%A2%E6%B5%8B%E8%B7%9D-python%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%AE%9E%E6%97%B6%E5%9B%BE%E5%83%8F%E7%BB%98%E5%88%B6/">https://jamesbin-bit.github.io/2020/11/02/%E8%B6%85%E5%A3%B0%E6%B3%A2%E6%B5%8B%E8%B7%9D-python%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%AE%9E%E6%97%B6%E5%9B%BE%E5%83%8F%E7%BB%98%E5%88%B6/</a>
+                    <a href="https://jamesbin-bit.github.io/2020/11/02/STM32%E9%A9%B1%E5%8A%A8%E4%BA%BA%E4%BD%93%E6%84%9F%E5%BA%94%E6%A8%A1%E5%9D%97/">https://jamesbin-bit.github.io/2020/11/02/STM32%E9%A9%B1%E5%8A%A8%E4%BA%BA%E4%BD%93%E6%84%9F%E5%BA%94%E6%A8%A1%E5%9D%97/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -601,8 +570,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Python%E9%A1%B9%E7%9B%AE/">
-                                    <span class="chip bg-color">Python项目</span>
+                                <a href="/tags/STM32%E9%A1%B9%E7%9B%AE%E5%AE%9E%E9%AA%8C/">
+                                    <span class="chip bg-color">STM32项目实验</span>
                                 </a>
                             
                         </div>
@@ -1033,9 +1002,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2020/11/02/STM32%E9%A9%B1%E5%8A%A8%E4%BA%BA%E4%BD%93%E6%84%9F%E5%BA%94%E6%A8%A1%E5%9D%97/">
                     <div class="card-image">
@@ -1053,9 +1023,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-02
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-02
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1068,6 +1038,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1086,41 +1057,44 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/11/01/%E5%85%B3%E4%BA%8E%E6%88%91/">
+                <a href="/2020/11/02/%E8%B6%85%E5%A3%B0%E6%B3%A2%E6%B5%8B%E8%B7%9D-python%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%AE%9E%E6%97%B6%E5%9B%BE%E5%83%8F%E7%BB%98%E5%88%B6/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="我的个人简介">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="超声波测距+python数据处理+可视化实时图像绘制">
                         
-                        <span class="card-title">我的个人简介</span>
+                        <span class="card-title">超声波测距+python数据处理+可视化实时图像绘制</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            个人信息
-李斌/男/1999
-笔名：JamesBin
-本科：河南理工大学
-政治面貌：中共预备党员
-我的公众号：零基础玩嵌入式 
-我的个人主页：JamesBin’blog
-擅长技能：工控PLC、STM32、Arduino、Linux等
-
-学习
+                            超声波一个特别好的练手实验，大家可以尝试一下！
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-01
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-02
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            JamesBin
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Python%E5%AE%9E%E6%88%98%E5%88%86%E4%BA%AB/" class="post-category">
+                                    Python实战分享
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python%E9%A1%B9%E7%9B%AE/">
+                        <span class="chip bg-color">Python项目</span>
+                    </a>
+                    
                 </div>
                 
             </div>
