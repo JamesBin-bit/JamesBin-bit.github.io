@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="STM32固件库中的变量类型, 零基础玩嵌入式">
+    <meta name="keywords" content="数码管详解, 零基础玩嵌入式">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>STM32固件库中的变量类型 | JamesBin</title>
+    <title>数码管详解 | JamesBin</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -399,12 +399,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">STM32固件库中的变量类型</h1>
+                    <h1 class="description center-align post-title">数码管详解</h1>
                 </div>
             </div>
         </div>
@@ -521,8 +521,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/STM32%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%88%86%E4%BA%AB/">
-                                <span class="chip bg-color">STM32基础知识分享</span>
+                            <a href="/tags/%E7%A1%AC%E4%BB%B6%E5%88%86%E4%BA%AB/">
+                                <span class="chip bg-color">硬件分享</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%95%B0%E7%A0%81%E7%AE%A1/">
+                                <span class="chip bg-color">数码管</span>
                             </a>
                         
                     </div>
@@ -533,8 +537,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/STM32%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%88%86%E4%BA%AB/" class="post-category">
-                                STM32基础知识分享
+                            <a href="/categories/%E7%A1%AC%E4%BB%B6%E7%9F%A5%E8%AF%86%E5%88%86%E4%BA%AB/" class="post-category">
+                                硬件知识分享
                             </a>
                         
                     </div>
@@ -546,7 +550,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-11-07
+                    2020-11-05
                 </div>
                 
 
@@ -560,7 +564,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1k
+                    1.2k
                 </div>
                 
 
@@ -583,32 +587,15 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p><img src="https://s1.ax1x.com/2020/11/01/B04dFe.jpg" alt="我的微信公众号" title="我的微信公众号"></p>
-<p>固态函数库定义了 24 个变量类型，他们的类型和大小是固定的。在文件 stm32f10x_type.h 中我们定义了这</p>
-<h2 id="变量："><a href="#变量：" class="headerlink" title="变量："></a>变量：</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">signed</span> <span class="keyword">long</span> s32;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">signed</span> <span class="keyword">short</span> s16;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">signed</span> <span class="keyword">char</span> s8;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">signed</span> <span class="keyword">long</span> <span class="keyword">const</span> sc32; <span class="comment">/* Read Only */</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">signed</span> <span class="keyword">short</span> <span class="keyword">const</span> sc16; <span class="comment">/* Read Only */</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">signed</span> <span class="keyword">char</span> <span class="keyword">const</span> sc8; <span class="comment">/* Read Only */</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">volatile</span> <span class="keyword">signed</span> <span class="keyword">long</span> vs32;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">volatile</span> <span class="keyword">signed</span> <span class="keyword">short</span> vs16;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">volatile</span> <span class="keyword">signed</span> <span class="keyword">char</span> vs8;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">volatile</span> <span class="keyword">signed</span> <span class="keyword">long</span> <span class="keyword">const</span> vsc32; <span class="comment">/* Read Only */</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">volatile</span> <span class="keyword">signed</span> <span class="keyword">short</span> <span class="keyword">const</span> vsc16; <span class="comment">/* Read Only */</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">volatile</span> <span class="keyword">signed</span> <span class="keyword">char</span> <span class="keyword">const</span> vsc8; <span class="comment">/* Read Only */</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> u32;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">short</span> u16;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">char</span> u8;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">const</span> uc32; <span class="comment">/* Read Only */</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">short</span> <span class="keyword">const</span> uc16; <span class="comment">/* Read Only */</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">char</span> <span class="keyword">const</span> uc8; <span class="comment">/* Read Only */</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">volatile</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> vu32;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">volatile</span> <span class="keyword">unsigned</span> <span class="keyword">short</span> vu16;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">volatile</span> <span class="keyword">unsigned</span> <span class="keyword">char</span> vu8;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">volatile</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">const</span> vuc32; <span class="comment">/* Read Only */</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">volatile</span> <span class="keyword">unsigned</span> <span class="keyword">short</span> <span class="keyword">const</span> vuc16; <span class="comment">/* Read Only */</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">volatile</span> <span class="keyword">unsigned</span> <span class="keyword">char</span> <span class="keyword">const</span> vuc8; <span class="comment">/* Read Only */</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="布尔型"><a href="#布尔型" class="headerlink" title="布尔型"></a>布尔型</h2><p>在文件 stm32f10x_type.h 中，布尔形变量被定义如下：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">enum</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">FALSE = <span class="number">0</span>,</span><br><span class="line">TRUE = !FALSE</span><br><span class="line">&#125; <span class="keyword">bool</span>;</span><br></pre></td></tr></table></figure>
-<h2 id="标志位状态类型"><a href="#标志位状态类型" class="headerlink" title="标志位状态类型"></a>标志位状态类型</h2><p>在文件 stm32f10x_type.h 中，我们定义标志位类型（ FlagStatus type）的 2 个可能值为“设置”与“重置”（ SET<br>or RESET）。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">enum</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">RESET = <span class="number">0</span>,</span><br><span class="line">SET = !RESET</span><br><span class="line">&#125; FlagStatus;</span><br></pre></td></tr></table></figure>
-<h2 id="功能状态类型"><a href="#功能状态类型" class="headerlink" title="功能状态类型"></a>功能状态类型</h2><p>在文件 stm32f10x_type.h 中，我们定义功能状态类型（ FunctionalState type）的 2 个可能值为“使能”与“失<br>能”（ ENABLE or DISABLE）。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">enum</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">DISABLE = <span class="number">0</span>,</span><br><span class="line">ENABLE = !DISABLE</span><br><span class="line">&#125; FunctionalState;</span><br></pre></td></tr></table></figure>
-<h2 id="错误状态类型"><a href="#错误状态类型" class="headerlink" title="错误状态类型"></a>错误状态类型</h2><p>在文件 stm32f10x_type.h 中，我们错误状态类型类型（ ErrorStatus type）的 2 个可能值为“成功”与“出错”<br>（ SUCCESS or ERROR）。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">enum</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">ERROR = <span class="number">0</span>,</span><br><span class="line">SUCCESS = !ERROR</span><br><span class="line">&#125; ErrorStatus;</span><br></pre></td></tr></table></figure>
-<h2 id="外设"><a href="#外设" class="headerlink" title="外设"></a>外设</h2><p>用户可以通过指向各个外设的指针访问各外设的控制寄存器。这些指针所指向的数据结构与各个外设的控<br>制寄存器布局一一对应。<br>外设控制寄存器结构<br>文件 stm32f10x_map.h 包含了所有外设控制寄存器的结构，下例为 SPI 寄存器结构的声明：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*------------------ Serial Peripheral Interface ----------------*/</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">vu16 CR1;</span><br><span class="line">u16 RESERVED0;</span><br><span class="line">vu16 CR2;</span><br><span class="line">u16 RESERVED1;</span><br><span class="line">vu16 SR;</span><br><span class="line">u16 RESERVED2;</span><br><span class="line">vu16 DR;</span><br><span class="line">u16 RESERVED3;</span><br><span class="line">vu16 CRCPR;</span><br><span class="line">u16 RESERVED4;</span><br><span class="line">vu16 RXCRCR;</span><br><span class="line">u16 RESERVED5;</span><br><span class="line">vu16 TXCRCR;</span><br><span class="line">u16 RESERVED6;</span><br><span class="line">&#125; SPI_TypeDef;</span><br></pre></td></tr></table></figure>
-<p>寄存器命名遵循上节的寄存器缩写命名规则。 RESERVEDi（ i 为一个整数索引值）表示被保留区域。</p>
-<h2 id="外设声明"><a href="#外设声明" class="headerlink" title="外设声明"></a>外设声明</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">文件 stm32f10x_map.h 包含了所有外设的声明，下例为 SPI 外设的声明：</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> EXT</span></span><br><span class="line">#Define EXT <span class="keyword">extern</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">...</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PERIPH_BASE ((u32)0x40000000)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> APB1PERIPH_BASE PERIPH_BASE</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> APB2PERIPH_BASE (PERIPH_BASE + 0x10000)</span></span><br><span class="line">...</span><br><span class="line"><span class="comment">/* SPI2 Base Address definition*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SPI2_BASE (APB1PERIPH_BASE + 0x3800)</span></span><br><span class="line">...</span><br><span class="line"><span class="comment">/* SPI2 peripheral declaration*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> DEBUG</span></span><br><span class="line">...</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> _SPI2</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SPI2 ((SPI_TypeDef *) SPI2_BASE)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">/*_SPI2 */</span></span></span><br><span class="line">...</span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span> <span class="comment">/* DEBUG */</span></span></span><br><span class="line">...</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> _SPI2</span></span><br><span class="line">EXT SPI_TypeDef *SPI2;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">/*_SPI2 */</span></span></span><br><span class="line">...</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">/* DEBUG */</span></span></span><br></pre></td></tr></table></figure>
-<p>如果用户希望使用外设 SPI，那么必须在文件 stm32f10x_conf.h 中定义_SPI 标签<br>通过定义标签_SPIn，用户可以访问外设 SPIn 的寄存器。例如，用户必须在文件 stm32f10x_conf.h 中定义<br>标签_SPI2，否则是不能访问 SPI2 的寄存器的。在文件 stm32f10x_conf.h 中，用户可以按照下例定义标签<br>_SPI 和 _SPIn</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _SPI</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _SPI1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _SPI2</span></span><br></pre></td></tr></table></figure>
-
-
-<p>&emsp;&emsp;每个外设都有若干寄存器专门分配给标志位。我们按照相应的结构定义这些寄存器。标志位的命名，同样遵循上节的外设缩写规范，以‘PPP_FLAG_’开始。对于不同的外设，标志位都被定义在相应的文件stm32f10x_ppp.h 中。<br>用户想要进入除错（ DEBUG）模式的话，必须在文件 stm32f10x_conf.h 中定义标签 DEBUG。<br>&emsp;&emsp;这样会在 SRAM 的外设结构部分创建一个指针。因此我们可以简化除错过程，并且通过转储外设获得来获得所有寄存器的状态。在所有情况下， SPI2 都是一个指向外设 SPI2 首地址的指针。<br>&emsp;&emsp;变量 DEBUG 可以仿照下例定义：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DEBUG 1</span></span><br></pre></td></tr></table></figure>
-
-<p>可以初始化 DEBUG 模式与文件 stm32f10x_lib.c 中如下：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> DEBUG</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">debug</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">...</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> _SPI2</span></span><br><span class="line">SPI2 = (SPI_TypeDef *) SPI2_BASE;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">/*_SPI2 */</span></span></span><br><span class="line">...</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">/* DEBUG*/</span></span></span><br></pre></td></tr></table></figure>
-
-<p>Note： 1 当用户选择 DEBUG 模式，宏 assert_param 被扩展，同时运行时间检查功能也在固态函数库代码中被激活。<br>Note： 2 进入 DEBUG 模式会增大代码的尺寸，降低代码的运行效率。因此，我们强烈建议仅仅在除错的时候使用相应代码，在最终的应用程序中，删除它们。</p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>&emsp;&emsp;<font face="宋体">数码管，也称作辉光管，是一种可以显示数字和其他信息的电子设备。玻璃管中包括一个金属丝网制成的阳极和多个阴极。大部分数码管阴极的形状为数字。管中充以低压气体，通常大部分为氖加上一些汞和/或氩。给某一个阴极充电，数码管就会发出颜色光，视乎管内的气体而定，一般都是橙色或绿色。</font></p>
+<p>&emsp;&emsp;<font face="宋体">数码管，也称作辉光管，是一种可以显示数字和其他信息的电子设备。玻璃管中包括一个金属丝网制成的阳极和多个阴极。大部分数码管阴极的形状为数字。管中充以低压气体，通常大部分为氖加上一些汞和/或氩。给某一个阴极充电，数码管就会发出颜色光，视乎管内的气体而定，一般都是橙色或绿色。<br>尽管在外观上和真空管相似，其原理并非为加热阴极放射电子。因而它被称为冷阴极管或霓虹灯的一个变种。在室温下，即使处于极端的室内工作条件下，这种管子的温度很少超过40℃。<br>&emsp;&emsp;数码管的最常见形式有10个阴极，形状为数字0到9，某些数码管还有一个或两个小数点。然而也有其他类型的数码管显示字母、标记和符号。如一种“数码管”，其阴极为一个模板制成的面具，上面有数字形状的孔。一些俄罗斯的数码管，如IN-14，使用倒立的数字2代表5，大概是为了节约生产成本，而没有明显的技术或美学方面的原因。俄罗斯的数码管大部分都使用了倒立的2作为5。<br>&emsp;&emsp;将170伏的直流电压加在阴极和阳极之间，每一个阴极可以发出氖的的红橙色光。由于混合气体的不同，不同类型的数码管之间的颜色有所区别。寿命较长的数码管在制造中加入了汞，减少了溅射，结果发出的光的颜色为蓝色或紫色调。在某些情况下，这些颜色被玻璃上的红色或橙色过滤涂层过滤。<br><img src="https://img-blog.csdnimg.cn/20200409193947878.gif#pic_center" alt="在这里插入图片描述"></p>
+<h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><p>&emsp;&emsp;<font face="宋体">按发光二极管单元连接方式可分为共阳极数码管和共阴极数码管。共阳数码管是指将所有发光二极管的阳极接到一起形成公共阳极(COM)的数码管，共阳数码管在应用时应将公共极COM接到+5V，当某一字段发光二极管的阴极为低电平时，相应字段就点亮，当某一字段的阴极为高电平时，相应字段就不亮。共阴数码管是指将所有发光二极管的阴极接到一起形成公共阴极(COM)的数码管，共阴数码管在应用时应将公共极COM接到地线GND上，当某一字段发光二极管的阳极为高电平时，相应字段就点亮，当某一字段的阳极为低电平时，相应字段就不亮。</p>
+<p><img src="https://img-blog.csdnimg.cn/20200409194225799.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTcyODMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200409194345321.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTcyODMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20200409194453888.gif#pic_center" alt="在这里插入图片描述"></p>
+<h2 id="arduino驱动数码管"><a href="#arduino驱动数码管" class="headerlink" title="arduino驱动数码管"></a>arduino驱动数码管</h2><p><img src="https://img-blog.csdnimg.cn/20200409194558310.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTcyODMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">NixieTube</span></span><br><span class="line"><span class="comment">控制共阴极数码管显示数字0到9</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//设置控制各段的数字IO脚，具体几号引脚对应哪一段，来源为数码管官方引脚图。</span></span><br><span class="line"><span class="keyword">int</span> pin_a = <span class="number">7</span>;</span><br><span class="line"><span class="keyword">int</span> pin_b = <span class="number">6</span>;</span><br><span class="line"><span class="keyword">int</span> pin_c = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> pin_d = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> pin_e = <span class="number">11</span>;</span><br><span class="line"><span class="keyword">int</span> pin_f = <span class="number">8</span>;</span><br><span class="line"><span class="keyword">int</span> pin_g = <span class="number">9</span>;</span><br><span class="line"><span class="keyword">int</span> pin_p = <span class="number">4</span>;</span><br><span class="line">        </span><br><span class="line"><span class="comment">//根据共阴极数码管段码表定义0~9显示的各段开关状态</span></span><br><span class="line"><span class="keyword">int</span> numTable[<span class="number">10</span>][<span class="number">8</span>] = &#123;</span><br><span class="line"><span class="comment">//1为点亮，0为关闭</span></span><br><span class="line"><span class="comment">//a  b  c  d  e  f  g  dp</span></span><br><span class="line">&#123;<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>&#125;,     <span class="comment">//0</span></span><br><span class="line">&#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>&#125;,     <span class="comment">//1</span></span><br><span class="line">&#123;<span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>&#125;,     <span class="comment">//2</span></span><br><span class="line">&#123;<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>&#125;,     <span class="comment">//3</span></span><br><span class="line">&#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>&#125;,     <span class="comment">//4</span></span><br><span class="line">&#123;<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>&#125;,     <span class="comment">//5</span></span><br><span class="line">&#123;<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>&#125;,     <span class="comment">//6</span></span><br><span class="line">&#123;<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>&#125;,     <span class="comment">//7</span></span><br><span class="line">&#123;<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>&#125;,     <span class="comment">//8</span></span><br><span class="line">&#123;<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>&#125;,     <span class="comment">//9</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setup</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">4</span>; i &lt;= <span class="number">11</span>; i++)</span><br><span class="line">&#123;</span><br><span class="line">pinMode(i, OUTPUT); <span class="comment">//设置4～11引脚为输出模式</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">loop</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)<span class="comment">//以此显示数字0到9</span></span><br><span class="line">&#123;</span><br><span class="line">digitalWrite(pin_a, numTable[i][<span class="number">0</span>]); <span class="comment">//设置a 引脚的电平</span></span><br><span class="line">digitalWrite(pin_b, numTable[i][<span class="number">1</span>]); <span class="comment">//设置b 引脚的电平</span></span><br><span class="line">digitalWrite(pin_c, numTable[i][<span class="number">2</span>]); <span class="comment">//设置c 引脚的电平</span></span><br><span class="line">digitalWrite(pin_d, numTable[i][<span class="number">3</span>]); <span class="comment">//设置d 引脚的电平</span></span><br><span class="line">digitalWrite(pin_e, numTable[i][<span class="number">4</span>]); <span class="comment">//设置e 引脚的电平</span></span><br><span class="line">digitalWrite(pin_f, numTable[i][<span class="number">5</span>]); <span class="comment">//设置f 引脚的电平</span></span><br><span class="line">digitalWrite(pin_g, numTable[i][<span class="number">6</span>]); <span class="comment">//设置g 引脚的电平</span></span><br><span class="line">digitalWrite(pin_p, numTable[i][<span class="number">7</span>]); <span class="comment">//设置dp引脚的电平</span></span><br><span class="line">delay(<span class="number">200</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>实物现象</strong><br><img src="https://img-blog.csdnimg.cn/20200409194627961.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTcyODMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>以上即是全部内容，感谢你的阅读！</p>
 
             </div>
             <hr/>
@@ -634,7 +621,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://jamesbin-bit.github.io/2020/11/07/STM32%E5%9B%BA%E4%BB%B6%E5%BA%93%E4%B8%AD%E7%9A%84%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B/">https://jamesbin-bit.github.io/2020/11/07/STM32%E5%9B%BA%E4%BB%B6%E5%BA%93%E4%B8%AD%E7%9A%84%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B/</a>
+                    <a href="https://jamesbin-bit.github.io/2020/11/05/%E6%95%B0%E7%A0%81%E7%AE%A1%E8%AF%A6%E8%A7%A3/">https://jamesbin-bit.github.io/2020/11/05/%E6%95%B0%E7%A0%81%E7%AE%A1%E8%AF%A6%E8%A7%A3/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -672,8 +659,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/STM32%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%88%86%E4%BA%AB/">
-                                    <span class="chip bg-color">STM32基础知识分享</span>
+                                <a href="/tags/%E7%A1%AC%E4%BB%B6%E5%88%86%E4%BA%AB/">
+                                    <span class="chip bg-color">硬件分享</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%95%B0%E7%A0%81%E7%AE%A1/">
+                                    <span class="chip bg-color">数码管</span>
                                 </a>
                             
                         </div>
@@ -1108,19 +1099,19 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/11/07/%E8%88%B5%E6%9C%BA%E8%AF%A6%E8%A7%A3/">
+                <a href="/2020/11/07/STM32%E5%9B%BA%E4%BB%B6%E5%BA%93%E4%B8%AD%E7%9A%84%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="舵机详解">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="STM32固件库中的变量类型">
                         
-                        <span class="card-title">舵机详解</span>
+                        <span class="card-title">STM32固件库中的变量类型</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            舵机，一个嵌入式必备的器件，快来看看吧！
+                            点击查看STM32固件库中的变量类型！
                         
                     </div>
                     <div class="publish-info">
@@ -1131,8 +1122,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%A1%AC%E4%BB%B6%E7%9F%A5%E8%AF%86%E5%88%86%E4%BA%AB/" class="post-category">
-                                    硬件知识分享
+                            <a href="/categories/STM32%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%88%86%E4%BA%AB/" class="post-category">
+                                    STM32基础知识分享
                                 </a>
                             
                             
@@ -1142,12 +1133,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%A1%AC%E4%BB%B6%E5%88%86%E4%BA%AB/">
-                        <span class="chip bg-color">硬件分享</span>
-                    </a>
-                    
-                    <a href="/tags/%E8%88%B5%E6%9C%BA%E7%9F%A5%E8%AF%86%E5%88%86%E4%BA%AB/">
-                        <span class="chip bg-color">舵机知识分享</span>
+                    <a href="/tags/STM32%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%88%86%E4%BA%AB/">
+                        <span class="chip bg-color">STM32基础知识分享</span>
                     </a>
                     
                 </div>
@@ -1161,31 +1148,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/11/05/%E6%95%B0%E7%A0%81%E7%AE%A1%E8%AF%A6%E8%A7%A3/">
+                <a href="/2020/11/04/%E6%8E%A8%E8%8D%90%E7%BB%99%E5%A4%A7%E5%AE%B612%E6%AC%BE%E5%A5%BD%E7%94%A8%E7%9A%84%E7%94%B5%E8%84%91%E8%BD%AF%E4%BB%B6/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="数码管详解">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="推荐给大家12款好用的电脑软件">
                         
-                        <span class="card-title">数码管详解</span>
+                        <span class="card-title">推荐给大家12款好用的电脑软件</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            数码管，一个非常常用的元件，快来看看那如何使用吧！
+                            推荐给大家12款好用的电脑软件，用起来足以提升效率，逼格高高！
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-05
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-04
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%A1%AC%E4%BB%B6%E7%9F%A5%E8%AF%86%E5%88%86%E4%BA%AB/" class="post-category">
-                                    硬件知识分享
+                            <a href="/categories/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86%E5%88%86%E4%BA%AB/" class="post-category">
+                                    电脑知识分享
                                 </a>
                             
                             
@@ -1195,12 +1182,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%A1%AC%E4%BB%B6%E5%88%86%E4%BA%AB/">
-                        <span class="chip bg-color">硬件分享</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%95%B0%E7%A0%81%E7%AE%A1/">
-                        <span class="chip bg-color">数码管</span>
+                    <a href="/tags/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86%E5%88%86%E4%BA%AB/">
+                        <span class="chip bg-color">电脑知识分享</span>
                     </a>
                     
                 </div>

@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="STM32固件库中的变量类型, 零基础玩嵌入式">
+    <meta name="keywords" content="舵机详解, 零基础玩嵌入式">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>STM32固件库中的变量类型 | JamesBin</title>
+    <title>舵机详解 | JamesBin</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -404,7 +404,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">STM32固件库中的变量类型</h1>
+                    <h1 class="description center-align post-title">舵机详解</h1>
                 </div>
             </div>
         </div>
@@ -521,8 +521,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/STM32%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%88%86%E4%BA%AB/">
-                                <span class="chip bg-color">STM32基础知识分享</span>
+                            <a href="/tags/%E7%A1%AC%E4%BB%B6%E5%88%86%E4%BA%AB/">
+                                <span class="chip bg-color">硬件分享</span>
+                            </a>
+                        
+                            <a href="/tags/%E8%88%B5%E6%9C%BA%E7%9F%A5%E8%AF%86%E5%88%86%E4%BA%AB/">
+                                <span class="chip bg-color">舵机知识分享</span>
                             </a>
                         
                     </div>
@@ -533,8 +537,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/STM32%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%88%86%E4%BA%AB/" class="post-category">
-                                STM32基础知识分享
+                            <a href="/categories/%E7%A1%AC%E4%BB%B6%E7%9F%A5%E8%AF%86%E5%88%86%E4%BA%AB/" class="post-category">
+                                硬件知识分享
                             </a>
                         
                     </div>
@@ -560,14 +564,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1k
+                    1.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    7 分
                 </div>
                 
 
@@ -583,32 +587,24 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p><img src="https://s1.ax1x.com/2020/11/01/B04dFe.jpg" alt="我的微信公众号" title="我的微信公众号"></p>
-<p>固态函数库定义了 24 个变量类型，他们的类型和大小是固定的。在文件 stm32f10x_type.h 中我们定义了这</p>
-<h2 id="变量："><a href="#变量：" class="headerlink" title="变量："></a>变量：</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">signed</span> <span class="keyword">long</span> s32;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">signed</span> <span class="keyword">short</span> s16;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">signed</span> <span class="keyword">char</span> s8;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">signed</span> <span class="keyword">long</span> <span class="keyword">const</span> sc32; <span class="comment">/* Read Only */</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">signed</span> <span class="keyword">short</span> <span class="keyword">const</span> sc16; <span class="comment">/* Read Only */</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">signed</span> <span class="keyword">char</span> <span class="keyword">const</span> sc8; <span class="comment">/* Read Only */</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">volatile</span> <span class="keyword">signed</span> <span class="keyword">long</span> vs32;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">volatile</span> <span class="keyword">signed</span> <span class="keyword">short</span> vs16;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">volatile</span> <span class="keyword">signed</span> <span class="keyword">char</span> vs8;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">volatile</span> <span class="keyword">signed</span> <span class="keyword">long</span> <span class="keyword">const</span> vsc32; <span class="comment">/* Read Only */</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">volatile</span> <span class="keyword">signed</span> <span class="keyword">short</span> <span class="keyword">const</span> vsc16; <span class="comment">/* Read Only */</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">volatile</span> <span class="keyword">signed</span> <span class="keyword">char</span> <span class="keyword">const</span> vsc8; <span class="comment">/* Read Only */</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> u32;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">short</span> u16;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">char</span> u8;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">const</span> uc32; <span class="comment">/* Read Only */</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">short</span> <span class="keyword">const</span> uc16; <span class="comment">/* Read Only */</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">char</span> <span class="keyword">const</span> uc8; <span class="comment">/* Read Only */</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">volatile</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> vu32;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">volatile</span> <span class="keyword">unsigned</span> <span class="keyword">short</span> vu16;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">volatile</span> <span class="keyword">unsigned</span> <span class="keyword">char</span> vu8;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">volatile</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">const</span> vuc32; <span class="comment">/* Read Only */</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">volatile</span> <span class="keyword">unsigned</span> <span class="keyword">short</span> <span class="keyword">const</span> vuc16; <span class="comment">/* Read Only */</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">volatile</span> <span class="keyword">unsigned</span> <span class="keyword">char</span> <span class="keyword">const</span> vuc8; <span class="comment">/* Read Only */</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="布尔型"><a href="#布尔型" class="headerlink" title="布尔型"></a>布尔型</h2><p>在文件 stm32f10x_type.h 中，布尔形变量被定义如下：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">enum</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">FALSE = <span class="number">0</span>,</span><br><span class="line">TRUE = !FALSE</span><br><span class="line">&#125; <span class="keyword">bool</span>;</span><br></pre></td></tr></table></figure>
-<h2 id="标志位状态类型"><a href="#标志位状态类型" class="headerlink" title="标志位状态类型"></a>标志位状态类型</h2><p>在文件 stm32f10x_type.h 中，我们定义标志位类型（ FlagStatus type）的 2 个可能值为“设置”与“重置”（ SET<br>or RESET）。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">enum</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">RESET = <span class="number">0</span>,</span><br><span class="line">SET = !RESET</span><br><span class="line">&#125; FlagStatus;</span><br></pre></td></tr></table></figure>
-<h2 id="功能状态类型"><a href="#功能状态类型" class="headerlink" title="功能状态类型"></a>功能状态类型</h2><p>在文件 stm32f10x_type.h 中，我们定义功能状态类型（ FunctionalState type）的 2 个可能值为“使能”与“失<br>能”（ ENABLE or DISABLE）。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">enum</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">DISABLE = <span class="number">0</span>,</span><br><span class="line">ENABLE = !DISABLE</span><br><span class="line">&#125; FunctionalState;</span><br></pre></td></tr></table></figure>
-<h2 id="错误状态类型"><a href="#错误状态类型" class="headerlink" title="错误状态类型"></a>错误状态类型</h2><p>在文件 stm32f10x_type.h 中，我们错误状态类型类型（ ErrorStatus type）的 2 个可能值为“成功”与“出错”<br>（ SUCCESS or ERROR）。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">enum</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">ERROR = <span class="number">0</span>,</span><br><span class="line">SUCCESS = !ERROR</span><br><span class="line">&#125; ErrorStatus;</span><br></pre></td></tr></table></figure>
-<h2 id="外设"><a href="#外设" class="headerlink" title="外设"></a>外设</h2><p>用户可以通过指向各个外设的指针访问各外设的控制寄存器。这些指针所指向的数据结构与各个外设的控<br>制寄存器布局一一对应。<br>外设控制寄存器结构<br>文件 stm32f10x_map.h 包含了所有外设控制寄存器的结构，下例为 SPI 寄存器结构的声明：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*------------------ Serial Peripheral Interface ----------------*/</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">vu16 CR1;</span><br><span class="line">u16 RESERVED0;</span><br><span class="line">vu16 CR2;</span><br><span class="line">u16 RESERVED1;</span><br><span class="line">vu16 SR;</span><br><span class="line">u16 RESERVED2;</span><br><span class="line">vu16 DR;</span><br><span class="line">u16 RESERVED3;</span><br><span class="line">vu16 CRCPR;</span><br><span class="line">u16 RESERVED4;</span><br><span class="line">vu16 RXCRCR;</span><br><span class="line">u16 RESERVED5;</span><br><span class="line">vu16 TXCRCR;</span><br><span class="line">u16 RESERVED6;</span><br><span class="line">&#125; SPI_TypeDef;</span><br></pre></td></tr></table></figure>
-<p>寄存器命名遵循上节的寄存器缩写命名规则。 RESERVEDi（ i 为一个整数索引值）表示被保留区域。</p>
-<h2 id="外设声明"><a href="#外设声明" class="headerlink" title="外设声明"></a>外设声明</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">文件 stm32f10x_map.h 包含了所有外设的声明，下例为 SPI 外设的声明：</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> EXT</span></span><br><span class="line">#Define EXT <span class="keyword">extern</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">...</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PERIPH_BASE ((u32)0x40000000)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> APB1PERIPH_BASE PERIPH_BASE</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> APB2PERIPH_BASE (PERIPH_BASE + 0x10000)</span></span><br><span class="line">...</span><br><span class="line"><span class="comment">/* SPI2 Base Address definition*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SPI2_BASE (APB1PERIPH_BASE + 0x3800)</span></span><br><span class="line">...</span><br><span class="line"><span class="comment">/* SPI2 peripheral declaration*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> DEBUG</span></span><br><span class="line">...</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> _SPI2</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SPI2 ((SPI_TypeDef *) SPI2_BASE)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">/*_SPI2 */</span></span></span><br><span class="line">...</span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span> <span class="comment">/* DEBUG */</span></span></span><br><span class="line">...</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> _SPI2</span></span><br><span class="line">EXT SPI_TypeDef *SPI2;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">/*_SPI2 */</span></span></span><br><span class="line">...</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">/* DEBUG */</span></span></span><br></pre></td></tr></table></figure>
-<p>如果用户希望使用外设 SPI，那么必须在文件 stm32f10x_conf.h 中定义_SPI 标签<br>通过定义标签_SPIn，用户可以访问外设 SPIn 的寄存器。例如，用户必须在文件 stm32f10x_conf.h 中定义<br>标签_SPI2，否则是不能访问 SPI2 的寄存器的。在文件 stm32f10x_conf.h 中，用户可以按照下例定义标签<br>_SPI 和 _SPIn</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _SPI</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _SPI1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _SPI2</span></span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;舵机，是指在自动驾驶仪中操纵飞机舵面（操纵面）转动的一种执行部件。分有：<br>①电动舵机，由电动机、传动部件和离合器组成。接受自动驾驶仪的指令信号而工作，当人工驾驶飞机时，由于离合器保持脱开而传动部件不发生作用。<br>②液压舵机，由液压作动器和旁通活门组成。当人工驾驶飞机时，旁通活门打开，由于作动器活塞两边的液压互相连通而不妨害人工操纵。此外，还有电动液压舵机，简称“电液舵机”。<br>&emsp;&emsp;舵机的大小由外舾装按照船级社的规范决定，选型时主要考虑扭矩大小。如何审慎地选择经济且合乎需求的舵机，也是一门不可轻忽的学问。<br>[百度百科]</p>
+<p>&emsp;&emsp;舵机是一种位置（角度）伺服的驱动器，适用于那些需要角度不断变化并可以保持的控制系统。在高档遥控玩具，如飞机、潜艇模型，遥控机器人中已经得到了普遍应用。<br>&emsp;&emsp;舵机是船舶上的一种大甲板机械。舵机的大小由外舾装按照船级社的规范决定，选型时主要考虑扭矩大小。<br>&emsp;&emsp;在航天方面，舵机应用广泛。航天方面，导弹姿态变换的俯仰、偏航、滚转运动都是靠舵机相互配合完成的。舵机在许多工程上都有应用，不仅限于船舶。</p>
+<h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><p><img src="https://img-blog.csdnimg.cn/20200409173258966.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTcyODMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>&emsp;&emsp;舵机在机器人技术中非常有用。如上图所示，这些马达体积很小，它们内置了控制电路。标准舵机系统，如Futaba S-148有42盎司/英寸的扭矩（相当于1.2千克的扭矩）， 对于它的体积来说，已经非常强大了 。它还可以根据负载的变化调整功率。因此，负载较轻的舵机系统不会消耗太多的能量。舵机的内部结构如上图所示。你可以看到控制电路，马达，一组齿轮，还有外壳。你还可以看到连接外部的3根连线。</p>
+<h2 id="伺服电机的比例控制"><a href="#伺服电机的比例控制" class="headerlink" title="伺服电机的比例控制"></a>伺服电机的比例控制</h2><p>&emsp;&emsp;那么，舵机是如何工作的呢?舵机有一些控制电路和一个电位器(一个可变电阻)，连接到输出轴。在上面的图片中，可以看到可变电阻在电路板的左边，三根红线连接处。可变电阻允许控制电路监控伺服电机的电流角度。如果轴的角度正确，则电机关闭。如果电路发现角度不正确，将电机转到正确的方向，直到角度正确。伺服系统的输出轴可以移动180度左右 。</p>
+<p><img src="https://img-blog.csdnimg.cn/20200409173307631.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTcyODMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="如何控制伺服电机的角度？"><a href="#如何控制伺服电机的角度？" class="headerlink" title="如何控制伺服电机的角度？"></a>如何控制伺服电机的角度？</h2><p>&emsp;&emsp;如何控制伺服电机转向的角度呢?控制线用来传达角度信号。角度是由施加在控制导线上的脉冲的持续时间决定的。这叫做脉冲编码调制。伺服系统期望每20毫秒看到一个脉冲（.02秒)。脉冲的长度将决定电机转多远距离。</p>
+<p>例如，1.5毫秒的脉冲将使电机转到90度位置(通常称为中性位置)。如果脉冲小于1.5 ms，则电机将轴向接近0度。如果脉冲大于1.5ms，则轴向180度方向旋转。</p>
+<p>详细可查阅：舵机角度的控制原理<br><img src="https://img-blog.csdnimg.cn/20200409173633949.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTcyODMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>如上图所示，脉冲的持续时间决定了输出轴的角度。注意这里的时间是说明性的，实际的时间取决于电机制造商。然而，原理是一样的。</p>
+<p><img src="https://img-blog.csdnimg.cn/20200409173700703.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTcyODMy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="stm32驱动舵机程序"><a href="#stm32驱动舵机程序" class="headerlink" title="stm32驱动舵机程序"></a>stm32驱动舵机程序</h2><p>stm32舵机驱动源程序如下:</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;led.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;delay.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;key.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;sys.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;usart.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;timer.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">u16 led0pwmval;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;               </span><br><span class="line"></span><br><span class="line">        delay_init();                     <span class="comment">//延时函数初始化         </span></span><br><span class="line">        NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);          <span class="comment">//设置NVIC中断分组2:2位抢占优先级，2位响应优先级</span></span><br><span class="line">        uart_init(<span class="number">115200</span>);         <span class="comment">//串口初始化为115200</span></span><br><span class="line">         LED_Init();                             <span class="comment">//LED端口初始化</span></span><br><span class="line">         TIM2_PWM_Init(<span class="number">1999</span>,<span class="number">719</span>);        <span class="comment">//100Khz的计数频率，计数到2000为20ms   </span></span><br><span class="line">          <span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">                        &#123;</span><br><span class="line">           LED1=<span class="number">0</span>;         </span><br><span class="line">         </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            </span><br><span class="line">                                                                                 TIM_SetCompare3(TIM2,<span class="number">50</span>);</span><br><span class="line">                    delay_ms(<span class="number">5000</span>);                                         <span class="comment">//延时多久很重要，自己一点点试。</span></span><br><span class="line">                                                               </span><br><span class="line">                                                       <span class="comment">//延时多久很重要，自己一点点试。</span></span><br><span class="line">                                                                                                </span><br><span class="line"></span><br><span class="line">               </span><br><span class="line">        &#125;</span><br><span class="line">      </span><br><span class="line"></span><br><span class="line">                        &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
-<p>&emsp;&emsp;每个外设都有若干寄存器专门分配给标志位。我们按照相应的结构定义这些寄存器。标志位的命名，同样遵循上节的外设缩写规范，以‘PPP_FLAG_’开始。对于不同的外设，标志位都被定义在相应的文件stm32f10x_ppp.h 中。<br>用户想要进入除错（ DEBUG）模式的话，必须在文件 stm32f10x_conf.h 中定义标签 DEBUG。<br>&emsp;&emsp;这样会在 SRAM 的外设结构部分创建一个指针。因此我们可以简化除错过程，并且通过转储外设获得来获得所有寄存器的状态。在所有情况下， SPI2 都是一个指向外设 SPI2 首地址的指针。<br>&emsp;&emsp;变量 DEBUG 可以仿照下例定义：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DEBUG 1</span></span><br></pre></td></tr></table></figure>
-
-<p>可以初始化 DEBUG 模式与文件 stm32f10x_lib.c 中如下：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> DEBUG</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">debug</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">...</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> _SPI2</span></span><br><span class="line">SPI2 = (SPI_TypeDef *) SPI2_BASE;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">/*_SPI2 */</span></span></span><br><span class="line">...</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">/* DEBUG*/</span></span></span><br></pre></td></tr></table></figure>
-
-<p>Note： 1 当用户选择 DEBUG 模式，宏 assert_param 被扩展，同时运行时间检查功能也在固态函数库代码中被激活。<br>Note： 2 进入 DEBUG 模式会增大代码的尺寸，降低代码的运行效率。因此，我们强烈建议仅仅在除错的时候使用相应代码，在最终的应用程序中，删除它们。</p>
+<p>main函数程序</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;timer.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;led.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;usart.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//V1.1 20120904</span></span><br><span class="line"><span class="comment">//1,增加TIM3_PWM_Init函数。</span></span><br><span class="line"><span class="comment">//2,增加LED0_PWM_VAL宏定义，控制TIM3_CH2脉宽                                                                          </span></span><br><span class="line"><span class="comment">//////////////////////////////////////////////////////////////////////////////////  </span></span><br><span class="line">            </span><br><span class="line"><span class="comment">//通用定时器3中断初始化</span></span><br><span class="line"><span class="comment">//这里时钟选择为APB1的2倍，而APB1为36M</span></span><br><span class="line"><span class="comment">//arr：自动重装值。</span></span><br><span class="line"><span class="comment">//psc：时钟预分频数</span></span><br><span class="line"><span class="comment">//这里使用的是定时器3!</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">TIM3_Int_Init</span><span class="params">(u16 arr,u16 psc)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  TIM_TimeBaseInitTypeDef  TIM_TimeBaseStructure;</span><br><span class="line">        NVIC_InitTypeDef NVIC_InitStructure;</span><br><span class="line"></span><br><span class="line">        RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3, ENABLE); <span class="comment">//时钟使能</span></span><br><span class="line"></span><br><span class="line">        TIM_TimeBaseStructure.TIM_Period = arr; <span class="comment">//设置在下一个更新事件装入活动的自动重装载寄存器周期的值         计数到5000为500ms</span></span><br><span class="line">        TIM_TimeBaseStructure.TIM_Prescaler =psc; <span class="comment">//设置用来作为TIMx时钟频率除数的预分频值  10Khz的计数频率  </span></span><br><span class="line">        TIM_TimeBaseStructure.TIM_ClockDivision = <span class="number">0</span>; <span class="comment">//设置时钟分割:TDTS = Tck_tim</span></span><br><span class="line">        TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;  <span class="comment">//TIM向上计数模式</span></span><br><span class="line">        TIM_TimeBaseInit(TIM3, &amp;TIM_TimeBaseStructure); <span class="comment">//根据TIM_TimeBaseInitStruct中指定的参数初始化TIMx的时间基数单位</span></span><br><span class="line"></span><br><span class="line">        TIM_ITConfig(TIM3,TIM_IT_Update,ENABLE ); <span class="comment">//使能指定的TIM3中断,允许更新中断</span></span><br><span class="line"></span><br><span class="line">        NVIC_InitStructure.NVIC_IRQChannel = TIM3_IRQn;  <span class="comment">//TIM3中断</span></span><br><span class="line">        NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = <span class="number">0</span>;  <span class="comment">//先占优先级0级</span></span><br><span class="line">        NVIC_InitStructure.NVIC_IRQChannelSubPriority = <span class="number">3</span>;  <span class="comment">//从优先级3级</span></span><br><span class="line">        NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE; <span class="comment">//IRQ通道被使能</span></span><br><span class="line">        NVIC_Init(&amp;NVIC_InitStructure);  <span class="comment">//根据NVIC_InitStruct中指定的参数初始化外设NVIC寄存器</span></span><br><span class="line"></span><br><span class="line">        TIM_Cmd(TIM3, ENABLE);  <span class="comment">//使能TIMx外设</span></span><br><span class="line">                                                         </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//定时器3中断服务程序</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">TIM3_IRQHandler</span><span class="params">(<span class="keyword">void</span>)</span>   <span class="comment">//TIM3中断</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (TIM_GetITStatus(TIM3, TIM_IT_Update) != RESET) <span class="comment">//检查指定的TIM中断发生与否:TIM 中断源</span></span><br><span class="line">                &#123;</span><br><span class="line">                TIM_ClearITPendingBit(TIM3, TIM_IT_Update  );  <span class="comment">//清除TIMx的中断待处理位:TIM 中断源</span></span><br><span class="line">                LED1=!LED1;</span><br><span class="line">                &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//TIM3 PWM部分初始化</span></span><br><span class="line"><span class="comment">//PWM输出初始化</span></span><br><span class="line"><span class="comment">//arr：自动重装值</span></span><br><span class="line"><span class="comment">//psc：时钟预分频数</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">TIM2_PWM_Init</span><span class="params">(u16 arr,u16 psc)</span></span></span><br><span class="line"><span class="function"></span>&#123;  </span><br><span class="line">        GPIO_InitTypeDef GPIO_InitStructure;</span><br><span class="line">        TIM_TimeBaseInitTypeDef  TIM_TimeBaseStructure;</span><br><span class="line">        TIM_OCInitTypeDef  TIM_OCInitStructure;</span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">        RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE);        <span class="comment">//使能定时器3时钟</span></span><br><span class="line">         RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA  | RCC_APB2Periph_AFIO, ENABLE);  <span class="comment">//使能GPIO外设和AFIO复用功能模块时钟</span></span><br><span class="line">        </span><br><span class="line"><span class="comment">//GPIO_PinRemapConfig(GPIO_PartialRemap_TIM2, ENABLE); //Timer3部分重映射  TIM3_CH2-&gt;PB5   </span></span><br><span class="line"></span><br><span class="line">   <span class="comment">//设置该引脚为复用输出功能,输出TIM3 CH2的PWM脉冲波形        GPIOB.5</span></span><br><span class="line">        GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2; <span class="comment">//TIM_CH2</span></span><br><span class="line">        GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;  <span class="comment">//复用推挽输出</span></span><br><span class="line">        GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;</span><br><span class="line">        GPIO_Init(GPIOA, &amp;GPIO_InitStructure);<span class="comment">//初始化GPIO</span></span><br><span class="line"></span><br><span class="line">   <span class="comment">//初始化TIM3</span></span><br><span class="line">        TIM_TimeBaseStructure.TIM_Period = arr; <span class="comment">//设置在下一个更新事件装入活动的自动重装载寄存器周期的值</span></span><br><span class="line">        TIM_TimeBaseStructure.TIM_Prescaler =psc; <span class="comment">//设置用来作为TIMx时钟频率除数的预分频值</span></span><br><span class="line">        TIM_TimeBaseStructure.TIM_ClockDivision = <span class="number">0</span>; <span class="comment">//设置时钟分割:TDTS = Tck_tim</span></span><br><span class="line">        TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;  <span class="comment">//TIM向上计数模式</span></span><br><span class="line">        TIM_TimeBaseInit(TIM2, &amp;TIM_TimeBaseStructure); <span class="comment">//根据TIM_TimeBaseInitStruct中指定的参数初始化TIMx的时间基数单位</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">//初始化TIM3 Channel2 PWM模式         </span></span><br><span class="line">        TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_PWM1; <span class="comment">//选择定时器模式:TIM脉冲宽度调制模式2</span></span><br><span class="line">         TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable; <span class="comment">//比较输出使能</span></span><br><span class="line">        TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPolarity_High; <span class="comment">//输出极性:TIM输出比较极性高</span></span><br><span class="line">        TIM_OC3Init(TIM2, &amp;TIM_OCInitStructure);  <span class="comment">//根据T指定的参数初始化外设TIM3 OC2</span></span><br><span class="line"></span><br><span class="line">        TIM_OC3PreloadConfig(TIM2, TIM_OCPreload_Enable);  <span class="comment">//使能TIM3在CCR2上的预装载寄存器</span></span><br><span class="line"></span><br><span class="line">        TIM_Cmd(TIM2, ENABLE);  <span class="comment">//使能TIM3</span></span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>32代码引自&gt;&gt;单片机论坛»论坛›电子技术分类讨论区›资料共享›stm32舵机驱动例程<a target="_blank" rel="noopener" href="http://www.51hei.com/bbs/dpj-150290-1.html">http://www.51hei.com/bbs/dpj-150290-1.html</a></p>
+<h2 id="arduino驱动舵机程序"><a href="#arduino驱动舵机程序" class="headerlink" title="arduino驱动舵机程序"></a>arduino驱动舵机程序</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;Servo.h&gt;</span></span></span><br><span class="line"></span><br><span class="line">Servo myservo;  <span class="comment">// 定义Servo对象来控制</span></span><br><span class="line"><span class="keyword">int</span> pos = <span class="number">0</span>;    <span class="comment">// 角度存储变量</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setup</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  myservo.attach(<span class="number">9</span>);  <span class="comment">// 控制线连接数字9</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">loop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (pos = <span class="number">0</span>; pos &lt;= <span class="number">180</span>; pos ++) &#123; <span class="comment">// 0°到180°</span></span><br><span class="line">    <span class="comment">// in steps of 1 degree</span></span><br><span class="line">    myservo.write(pos);              <span class="comment">// 舵机角度写入</span></span><br><span class="line">    delay(<span class="number">10</span>);                       <span class="comment">// 等待转动到指定角度</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span> (pos = <span class="number">180</span>; pos &gt;= <span class="number">0</span>; pos --) &#123; <span class="comment">// 从180°到0°</span></span><br><span class="line">    myservo.write(pos);              <span class="comment">// 舵机角度写入</span></span><br><span class="line">    delay(<span class="number">10</span>);                       <span class="comment">// 等待转动到指定角度</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
             </div>
             <hr/>
@@ -634,7 +630,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://jamesbin-bit.github.io/2020/11/07/STM32%E5%9B%BA%E4%BB%B6%E5%BA%93%E4%B8%AD%E7%9A%84%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B/">https://jamesbin-bit.github.io/2020/11/07/STM32%E5%9B%BA%E4%BB%B6%E5%BA%93%E4%B8%AD%E7%9A%84%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B/</a>
+                    <a href="https://jamesbin-bit.github.io/2020/11/07/%E8%88%B5%E6%9C%BA%E8%AF%A6%E8%A7%A3/">https://jamesbin-bit.github.io/2020/11/07/%E8%88%B5%E6%9C%BA%E8%AF%A6%E8%A7%A3/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -672,8 +668,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/STM32%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%88%86%E4%BA%AB/">
-                                    <span class="chip bg-color">STM32基础知识分享</span>
+                                <a href="/tags/%E7%A1%AC%E4%BB%B6%E5%88%86%E4%BA%AB/">
+                                    <span class="chip bg-color">硬件分享</span>
+                                </a>
+                            
+                                <a href="/tags/%E8%88%B5%E6%9C%BA%E7%9F%A5%E8%AF%86%E5%88%86%E4%BA%AB/">
+                                    <span class="chip bg-color">舵机知识分享</span>
                                 </a>
                             
                         </div>
@@ -1104,9 +1104,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2020/11/07/%E8%88%B5%E6%9C%BA%E8%AF%A6%E8%A7%A3/">
                     <div class="card-image">
@@ -1124,9 +1125,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-07
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-07
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1139,6 +1140,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1161,31 +1163,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/11/05/%E6%95%B0%E7%A0%81%E7%AE%A1%E8%AF%A6%E8%A7%A3/">
+                <a href="/2020/11/07/STM32%E5%9B%BA%E4%BB%B6%E5%BA%93%E4%B8%AD%E7%9A%84%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="数码管详解">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="STM32固件库中的变量类型">
                         
-                        <span class="card-title">数码管详解</span>
+                        <span class="card-title">STM32固件库中的变量类型</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            数码管，一个非常常用的元件，快来看看那如何使用吧！
+                            点击查看STM32固件库中的变量类型！
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-05
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-07
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%A1%AC%E4%BB%B6%E7%9F%A5%E8%AF%86%E5%88%86%E4%BA%AB/" class="post-category">
-                                    硬件知识分享
+                            <a href="/categories/STM32%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%88%86%E4%BA%AB/" class="post-category">
+                                    STM32基础知识分享
                                 </a>
                             
                             
@@ -1195,12 +1197,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%A1%AC%E4%BB%B6%E5%88%86%E4%BA%AB/">
-                        <span class="chip bg-color">硬件分享</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%95%B0%E7%A0%81%E7%AE%A1/">
-                        <span class="chip bg-color">数码管</span>
+                    <a href="/tags/STM32%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%88%86%E4%BA%AB/">
+                        <span class="chip bg-color">STM32基础知识分享</span>
                     </a>
                     
                 </div>
