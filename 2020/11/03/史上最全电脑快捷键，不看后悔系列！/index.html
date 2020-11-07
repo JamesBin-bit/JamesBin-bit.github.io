@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="超声波测距+python数据处理+可视化实时图像绘制, 零基础玩嵌入式">
+    <meta name="keywords" content="史上最全电脑快捷键，不看后悔系列！, 零基础玩嵌入式">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>超声波测距+python数据处理+可视化实时图像绘制 | JamesBin</title>
+    <title>史上最全电脑快捷键，不看后悔系列！ | JamesBin</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -399,12 +399,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">超声波测距+python数据处理+可视化实时图像绘制</h1>
+                    <h1 class="description center-align post-title">史上最全电脑快捷键，不看后悔系列！</h1>
                 </div>
             </div>
         </div>
@@ -521,8 +521,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Python%E9%A1%B9%E7%9B%AE/">
-                                <span class="chip bg-color">Python项目</span>
+                            <a href="/tags/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86%E5%88%86%E4%BA%AB/">
+                                <span class="chip bg-color">电脑知识分享</span>
                             </a>
                         
                     </div>
@@ -533,8 +533,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Python%E5%AE%9E%E6%88%98%E5%88%86%E4%BA%AB/" class="post-category">
-                                Python实战分享
+                            <a href="/categories/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86%E5%88%86%E4%BA%AB/" class="post-category">
+                                电脑知识分享
                             </a>
                         
                     </div>
@@ -546,7 +546,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-11-02
+                    2020-11-03
                 </div>
                 
 
@@ -560,14 +560,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.8k
+                    1.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    4 分
                 </div>
                 
 
@@ -583,55 +583,13 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p><img src="https://s1.ax1x.com/2020/11/01/B04dFe.jpg" alt="我的微信公众号" title="我的微信公众号"></p>
-<p>本文介绍的是使用arduino驱动超声波测量距离，并通过串口将数据发送给python，从而进行数据处理，处理结果如图所示。</p>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>超声波模块+arduino开发板+杜邦线数根+python开发环境</p>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>首先使用arduino车辆距离，通过串口将数据发送给python代码进行数据处理并绘制成图像进行实时显示。</p>
-<h2 id="超声波模块介绍"><a href="#超声波模块介绍" class="headerlink" title="超声波模块介绍"></a>超声波模块介绍</h2><p><img src="https://img-blog.csdnimg.cn/20200408081116627.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTcyODMy,size_16,color_FFFFFF,t_70"><br>如上图所示，VCC 供5V电源， GND 为地线，TRIG 触发控制信号输入，ECHO 回响信号输出等四个接口端。</p>
-<p>2、电路连接</p>
-<p>接线比较简单，按照如下顺序连线即可：<img src="https://img-blog.csdnimg.cn/20200408081147295.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTcyODMy,size_16,color_FFFFFF,t_70"></p>
-<p>3、程序编写</p>
-<p>根据模块的原理来进行代码编写，超声测距时的操作时序如下：<img src="https://img-blog.csdnimg.cn/20200408081218877.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTcyODMy,size_16,color_FFFFFF,t_70"></p>
-<p>以上时序图表明你只需要提供一个 10uS 以上脉冲触发信号，该模块内部将发出 8 个 40kHz 周期电平并检测回波。一旦检测到有</p>
-<p>回波信号则输出回响信号。回响信号的脉冲宽度与所测的距离成正比。由此通过发射信号到收到的回响信号时间间隔可以计算得</p>
-<p>到距离。公式：uS/58=厘米或者 uS/148=英寸；或是：距离=高电平时间*声速（340M/S）/2；建议测量周期为 60ms 以上，以</p>
-<p>防止发射信号对回响信号的影响。</p>
-<p><strong>注意：</strong><br>1、此模块不宜带电连接，若要带电连接，则先让模块的 GND 端先连接，否则会影响模块的正常工作。</p>
-<p>2、测距时，被测物体的面积不少于 0.5 平方米且平面尽量要求平整，否则影响测量的结果。</p>
-<p>编写代码如下：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">*    文件: 超声测距.ino      by 零知实验室([url=http://www.lingzhilab.com]www.lingzhilab.com[/url])</span></span><br><span class="line"><span class="comment">*    -^^- 零知开源，让电子制作变得更简单！ -^^-</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SR04_TRIG        9</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SR04_ECHO        10</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">// the setup routine runs once when you press reset:</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setup</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// put your setup code here, to run once:</span></span><br><span class="line">         </span><br><span class="line">        pinMode(SR04_TRIG, OUTPUT);</span><br><span class="line">        pinMode(SR04_ECHO, INPUT);</span><br><span class="line">         </span><br><span class="line">        Serial.begin(<span class="number">9600</span>);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// the loop routine runs over and over again forever:</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">loop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// put your main code here, to run repeatedly:</span></span><br><span class="line">         </span><br><span class="line">        <span class="keyword">int</span> distance = getDistance();</span><br><span class="line">         </span><br><span class="line">        Serial.print(<span class="string">&quot;distance = &quot;</span>);</span><br><span class="line">        Serial.println(distance);</span><br><span class="line">         </span><br><span class="line">        delay(<span class="number">300</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="serial库的安装"><a href="#serial库的安装" class="headerlink" title="serial库的安装"></a>serial库的安装</h2><p>安装 pip install serial。下载了一会安装好了，再运行，还是提示同样的错误。上网查了一下，应该安装 pip install pyserial。</p>
-<p><img src="https://img-blog.csdnimg.cn/20200408082440850.png"></p>
-<p>如果上述方法安装失败，可能需要下载下来再安装。</p>
-<p>在 <a target="_blank" rel="noopener" href="https://pypi.org/project/pyserial/#files">https://pypi.org/project/pyserial/#files</a>     中，有<img src="https://img-blog.csdnimg.cn/2020040808251081.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTcyODMy,size_16,color_FFFFFF,t_70"></p>
-<p>Windows下下载这个wheel格式的文件。关于wheel文件<br>如果你已经安装了pip，那么你需要把它升级到最新版本。<br>以管理员身份运行cmd<br>转到Python安装目录的Scripts目录下： </p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">cd C:\Program Files\Python36\Scripts</span><br><span class="line">pip install wheel</span><br><span class="line">pip install 路径\文件名.whl： </span><br><span class="line">pip install C:\Users\<span class="number">0</span>AQZ0\Downloads\matplotlib<span class="number">-2.1</span><span class="number">.2</span>-cp27-cp27m-win_amd64.whl</span><br></pre></td></tr></table></figure>
-
-<p>以上经验来源于：EmbededDriver的博客<a target="_blank" rel="noopener" href="https://blog.csdn.net/u012308586/article/details/89449004">https://blog.csdn.net/u012308586/article/details/89449004</a></p>
-<h2 id="matplotlib库的安装"><a href="#matplotlib库的安装" class="headerlink" title="matplotlib库的安装"></a>matplotlib库的安装</h2><p><strong>一、一般方法</strong><br>1.Win+R输入cmd进入到CMD窗口下，执行python -m pip install -U pip setuptools进行升级。<br><img src="https://img-blog.csdnimg.cn/20200408083252381.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTcyODMy,size_16,color_FFFFFF,t_70"></p>
-<p>2.输入python -m pip install matplotlib进行自动的安装，系统会自动下载安装包<img src="https://img-blog.csdnimg.cn/20200408083306321.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTcyODMy,size_16,color_FFFFFF,t_70"><br>3.进入到python idle中，运行import matplotlib，如下图所示，如果没有报错，就证明安装成果。<img src="https://img-blog.csdnimg.cn/20200408083330444.png"><br>输入以下代码运行成果证明安装没问题</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">labels=<span class="string">&#x27;frogs&#x27;</span>,<span class="string">&#x27;hogs&#x27;</span>,<span class="string">&#x27;dogs&#x27;</span>,<span class="string">&#x27;logs&#x27;</span></span><br><span class="line">sizes=<span class="number">15</span>,<span class="number">20</span>,<span class="number">45</span>,<span class="number">10</span></span><br><span class="line">colors=<span class="string">&#x27;yellowgreen&#x27;</span>,<span class="string">&#x27;gold&#x27;</span>,<span class="string">&#x27;lightskyblue&#x27;</span>,<span class="string">&#x27;lightcoral&#x27;</span></span><br><span class="line">explode=<span class="number">0</span>,<span class="number">0.1</span>,<span class="number">0</span>,<span class="number">0</span></span><br><span class="line">plt.pie(sizes,explode=explode,labels=labels,colors=colors,autopct=<span class="string">&#x27;%1.1f%%&#x27;</span>,shadow=<span class="literal">True</span>,startangle=<span class="number">50</span>)</span><br><span class="line">plt.axis(<span class="string">&#x27;equal&#x27;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-
-
-<p><img src="https://img-blog.csdnimg.cn/20200408083405941.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTcyODMy,size_16,color_FFFFFF,t_70"></p>
-<p>以上方法来源于：猪猪侠喜欢躲猫猫的博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/zzx2016zzx/article/details/83099583?depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1&utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1">最简单的matplotlib安装教程</a><br><strong>二、特殊方法</strong><br>我建议大家用exe文件安装matplotlib，我使用setuptools安装，没安装成功，提示一堆错误。所以我推荐还是exe安装，我把matplotlib的exe安装文件列表写在下面的参考资料里。你找到对应版本的下载就可以，这里是安装过程：<br>1、首先，我们下载了适合自己的版本<br><img src="https://img-blog.csdnimg.cn/20200408082855429.png"><br>2、打开它，就会看到安装界面，点击下一步<br><img src="https://img-blog.csdnimg.cn/20200408082909145.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTcyODMy,size_16,color_FFFFFF,t_70"></p>
-<p>3、这里，输入python的安装目录，点击下一步</p>
-<p><img src="https://img-blog.csdnimg.cn/20200408082923734.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTcyODMy,size_16,color_FFFFFF,t_70"><br>4、安装过程的截图</p>
-<p><img src="https://img-blog.csdnimg.cn/20200408082937477.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTcyODMy,size_16,color_FFFFFF,t_70"><br>5、现在就安装好了，引入一下，看看是否出现了错误，没有错误就说明安装成功。<br><img src="https://img-blog.csdnimg.cn/20200408082952182.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTcyODMy,size_16,color_FFFFFF,t_70"><br><strong>错误参考：</strong></p>
 <blockquote>
-<p>如果提示错误：ImportError: matplotlib requires dateutil，你可以看这篇文章：<a target="_blank" rel="noopener" href="http://jingyan.baidu.com/article/aa6a2c14d5aa7f0d4c19c4e2.html">http://jingyan.baidu.com/article/aa6a2c14d5aa7f0d4c19c4e2.html</a></p>
+<p>电脑(Computer)是一种利用电子学原理根据一系列指令来对数据进行处理的设备。计算机由运算逻辑单元、控制器、输入和输出设备、记忆单元五大单元组成，以二进制为计算机基本单位。</p>
 </blockquote>
-<blockquote>
-<p>如果提示错误：ImportError: matplotlib requires<br>pyparsing，你可以看这篇文章：<a target="_blank" rel="noopener" href="http://jingyan.baidu.com/article/e4d08ffdd3b9690fd2f60de2.html">http://jingyan.baidu.com/article/e4d08ffdd3b9690fd2f60de2.html</a></p>
-</blockquote>
-<p>以上经验来源于百度经验：Python教程：[55]matplotlib安装下载方法<a target="_blank" rel="noopener" href="https://jingyan.baidu.com/article/154b46315523b428ca8f41e2.html">https://jingyan.baidu.com/article/154b46315523b428ca8f41e2.html</a></p>
-<h2 id="python读取串口数据代码"><a href="#python读取串口数据代码" class="headerlink" title="python读取串口数据代码"></a>python读取串口数据代码</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> serial</span><br><span class="line"> </span><br><span class="line">ser=serial.Serial(<span class="string">&quot;COM3&quot;</span>,<span class="number">115200</span>,timeout=<span class="number">0.5</span>)	<span class="comment">#打开串口</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">while</span> (<span class="number">1</span>):</span><br><span class="line">	ch=ser.read()</span><br><span class="line">	str1=ch.decode(<span class="string">&quot;iso-8859-15&quot;</span>)	<span class="comment">#bytes转str</span></span><br><span class="line"> </span><br><span class="line">	<span class="keyword">if</span>(str1):	<span class="comment">#判断数据是否为空，很重要</span></span><br><span class="line">		l=<span class="built_in">ord</span>(str1)		<span class="comment">#str转int，方便数据计算和处理</span></span><br><span class="line">		print(<span class="string">&quot;%x&quot;</span> % l)	</span><br><span class="line"> </span><br><span class="line">	<span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
-<h2 id="python进行图像绘制的程序代码"><a href="#python进行图像绘制的程序代码" class="headerlink" title="python进行图像绘制的程序代码"></a>python进行图像绘制的程序代码</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">ax = []                    <span class="comment"># 定义一个 x 轴的空列表用来接收动态的数据</span></span><br><span class="line">ay = []                    <span class="comment"># 定义一个 y 轴的空列表用来接收动态的数据</span></span><br><span class="line">plt.ion()                  <span class="comment"># 开启一个画图的窗口</span></span><br><span class="line">i=<span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> i&lt;<span class="number">1000</span>:</span><br><span class="line">	<span class="comment">#print(b)</span></span><br><span class="line">	<span class="keyword">if</span> b == <span class="string">&quot;&quot;</span>:</span><br><span class="line">		b = <span class="number">0</span></span><br><span class="line">		<span class="comment">#print(b)</span></span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">		b = <span class="built_in">float</span>(b)</span><br><span class="line">		<span class="comment">#print(b)</span></span><br><span class="line"></span><br><span class="line">		ax.append(i)           <span class="comment"># 添加 i 到 x 轴的数据中</span></span><br><span class="line">		i=i+<span class="number">1</span></span><br><span class="line">		ay.append(b)        <span class="comment"># 添加 i 的平方到 y 轴的数据中</span></span><br><span class="line">		plt.clf()             		 <span class="comment"># 清除之前画的图</span></span><br><span class="line">		plt.plot(ax,ay)        <span class="comment"># 画出当前 ax 列表和 ay 列表中的值的图形</span></span><br><span class="line">		plt.pause(<span class="number">0.1</span>)         <span class="comment"># 暂停一秒</span></span><br><span class="line">		plt.ioff()             <span class="comment"># 关闭画图的窗口</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>绘制的图像如下图<img src="https://img-blog.csdnimg.cn/20200408082010760.gif#pic_center"></p>
-<h2 id="整体代码"><a href="#整体代码" class="headerlink" title="整体代码"></a>整体代码</h2><p><strong>arduino代码：</strong></p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> TrgPin = A0;</span><br><span class="line"><span class="keyword">int</span> EcoPin = A1;</span><br><span class="line"><span class="keyword">float</span> dist;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setup</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;   </span><br><span class="line">  Serial.begin(<span class="number">9600</span>);</span><br><span class="line">  <span class="comment">//设置TrgPin为输出状态</span></span><br><span class="line">  pinMode(TrgPin, OUTPUT);</span><br><span class="line">  <span class="comment">// 设置EcoPin为输入状态</span></span><br><span class="line">  pinMode(EcoPin, INPUT);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">loop</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  digitalWrite(TrgPin, LOW);</span><br><span class="line">  delayMicroseconds(<span class="number">8</span>);</span><br><span class="line">  digitalWrite(TrgPin, HIGH);</span><br><span class="line">  <span class="comment">// 维持10毫秒高电平用来产生一个脉冲</span></span><br><span class="line">  delayMicroseconds(<span class="number">10</span>);</span><br><span class="line">  digitalWrite(TrgPin, LOW);</span><br><span class="line">  <span class="comment">// 读取脉冲的宽度并换算成距离</span></span><br><span class="line">  dist = pulseIn(EcoPin, HIGH) / <span class="number">58.00</span>;</span><br><span class="line">  Serial.print(<span class="string">&quot;Distance:&quot;</span>);</span><br><span class="line">  Serial.print(dist);</span><br><span class="line">  Serial.println(<span class="string">&quot;cm&quot;</span>);</span><br><span class="line">  delay(<span class="number">300</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>python代码：</strong></p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot as plt</span><br><span class="line"><span class="keyword">import</span> serial</span><br><span class="line"></span><br><span class="line">serialPort = <span class="string">&quot;COM4&quot;</span>  # 串口</span><br><span class="line">baudRate = <span class="number">9600</span>  # 波特率</span><br><span class="line">ser = serial.Serial(serialPort, baudRate, timeout=<span class="number">0.1</span>)</span><br><span class="line"><span class="meta">#print(<span class="meta-string">&quot;参数设置：串口=%s ，波特率=%d&quot;</span> % (serialPort, baudRate))</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ax = []                    # 定义一个 x 轴的空列表用来接收动态的数据</span><br><span class="line">ay = []                    # 定义一个 y 轴的空列表用来接收动态的数据</span><br><span class="line">plt.ion()                  # 开启一个画图的窗口</span><br><span class="line">i=<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> i&lt;<span class="number">1000</span>:</span><br><span class="line">	str1 = ser.readline()</span><br><span class="line">	str1 = str(str1)</span><br><span class="line">	b = str1.lstrip(<span class="string">&quot;b&#x27;&quot;</span>)</span><br><span class="line">	b = b.lstrip(<span class="string">&quot;Distance:&quot;</span>)</span><br><span class="line">	b = b.rstrip(<span class="string">&quot;&#x27;&quot;</span>)</span><br><span class="line">	b = b.replace(&#x27;\\n&#x27;, &#x27;&#x27;).replace(&#x27;\\r&#x27;, &#x27;&#x27;)</span><br><span class="line">	b = b.lstrip()</span><br><span class="line">	b = b.replace(&#x27;cm&#x27;, &#x27;&#x27;)</span><br><span class="line">	b = b.lstrip()</span><br><span class="line">	<span class="meta">#print(b)</span></span><br><span class="line">	<span class="keyword">if</span> b == <span class="string">&quot;&quot;</span>:</span><br><span class="line">		b = <span class="number">0</span></span><br><span class="line">		<span class="meta">#print(b)</span></span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">		b = <span class="keyword">float</span>(b)</span><br><span class="line">		<span class="meta">#print(b)</span></span><br><span class="line"></span><br><span class="line">		ax.append(i)           # 添加 i 到 x 轴的数据中</span><br><span class="line">		i=i+<span class="number">1</span></span><br><span class="line">		ay.append(b)        # 添加 i 的平方到 y 轴的数据中</span><br><span class="line">		plt.clf()             		 # 清除之前画的图</span><br><span class="line">		plt.plot(ax,ay)        # 画出当前 ax 列表和 ay 列表中的值的图形</span><br><span class="line">		plt.pause(<span class="number">0.1</span>)         # 暂停一秒</span><br><span class="line">		plt.ioff()             # 关闭画图的窗口</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="number">1</span>:</span><br><span class="line">	print(<span class="string">&quot;处理完毕！&quot;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="电脑中单个键认识与作用："><a href="#电脑中单个键认识与作用：" class="headerlink" title="电脑中单个键认识与作用："></a>电脑中单个键认识与作用：</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">Esc：退出键</span><br><span class="line"></span><br><span class="line">　Tab：表格键</span><br><span class="line"></span><br><span class="line">Caps Lock：大写锁定键</span><br><span class="line"></span><br><span class="line">　Shift：转换键</span><br><span class="line"></span><br><span class="line">　Ctrl：控制键</span><br><span class="line"></span><br><span class="line">　Alt：可选(切换)键</span><br><span class="line"></span><br><span class="line">　Enter：回车键</span><br><span class="line"></span><br><span class="line">　F1～F12：功能键</span><br><span class="line"></span><br><span class="line">　Print Screen：打印屏幕键</span><br><span class="line"></span><br><span class="line">　Scroll Lock：滚动锁定</span><br><span class="line"></span><br><span class="line">　Pause <span class="keyword">break</span>：暂停键</span><br><span class="line"></span><br><span class="line">　Insert：插入键</span><br><span class="line"></span><br><span class="line">　Delete：删除键</span><br><span class="line"></span><br><span class="line">　Home：原位键</span><br><span class="line"></span><br><span class="line">　End：结尾键</span><br><span class="line"></span><br><span class="line">　PageUp：向上翻页键</span><br><span class="line"></span><br><span class="line">　PageDown：向下翻页键</span><br></pre></td></tr></table></figure>
+<h2 id="功能键F键的使用技巧"><a href="#功能键F键的使用技巧" class="headerlink" title="功能键F键的使用技巧"></a>功能键F键的使用技巧</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">F1:帮助，处在资源管理器或桌面，那么按下F1就会出现Windows的帮助程序。如果你正在对某个程序进行操作，而想得到Windows帮助，则需要按下Win+F1。按下Shift+F1，会出现<span class="string">&quot;What&#x27;s This?&quot;</span>的帮助信息。</span><br><span class="line"></span><br><span class="line">　　F2：文件或文件夹重命名。</span><br><span class="line"></span><br><span class="line">　　F3：搜索文件</span><br><span class="line"></span><br><span class="line">　　F4：这个键用来打开IE中的地址栏列表，要关闭IE窗口，可以用Alt+F4组合键。</span><br><span class="line"></span><br><span class="line">　　F5：用来刷新IE或资源管理器中当前所在窗口的内容。</span><br><span class="line"></span><br><span class="line">　　F6：可以快速在资源管理器及IE中定位到地址栏。</span><br><span class="line"></span><br><span class="line">　　F7：在Windows中没有任何作用。不过在DOS窗口中，它是有作用的，试试看吧!</span><br><span class="line"></span><br><span class="line">　　F8：在启动电脑时，可以用它来显示启动菜单。</span><br><span class="line"></span><br><span class="line">　　F9：在Windows中同样没有任何作用。但在Windows Media Player中可以用来快速降低音量。</span><br><span class="line"></span><br><span class="line">　　F10：用来激活Windows或程序中的菜单，按下Shift+F10会出现右键快捷菜单。和键盘中Application键的作用是相同的。而在Windows Media Player中，它的功能是提高音量。</span><br><span class="line"></span><br><span class="line">　　F11：可以使当前的资源管理器或IE变为全屏显示。</span><br><span class="line"></span><br><span class="line">　　F12：在Windows中同样没有任何作用。但在Word中，按下它会快速弹出另存为文件的窗口。</span><br></pre></td></tr></table></figure>
+<h2 id="组合键的作用"><a href="#组合键的作用" class="headerlink" title="组合键的作用"></a>组合键的作用</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">  Win+F1 打开Windows的帮助文件</span><br><span class="line"></span><br><span class="line">　Win+F 打开Windows的查找文件窗口</span><br><span class="line"></span><br><span class="line">　Win+E 打开Windows的资源管理器</span><br><span class="line"></span><br><span class="line">　Win+Break 打开Windows的系统属性窗口</span><br><span class="line"></span><br><span class="line">　Win+M 最小化所有打开的Windows的窗口</span><br><span class="line"></span><br><span class="line">　Win+Shift+M 恢复所有最小化的W indows的窗口</span><br><span class="line"></span><br><span class="line">　Win+U 打开Windows工具管理器</span><br><span class="line"></span><br><span class="line">　Win+Ctrl+F 打开Windows查找计算机窗口</span><br><span class="line"></span><br><span class="line">  Win+D 快速显示/隐藏桌面</span><br><span class="line"></span><br><span class="line">　Win+R 打开运行对话框，重新开始一个Windows任务</span><br><span class="line"></span><br><span class="line">　Win+Tab 在目前打开的多个任务之间切换，按下回车键即变成当前任务</span><br><span class="line"></span><br><span class="line">　Win+Break 打开“系统属性”窗口</span><br><span class="line"></span><br><span class="line">　Window+l 直接锁屏 这样就不用担心别人偷看电脑了</span><br><span class="line"></span><br><span class="line">　Window+E 打开“我的电脑”桌面上再多的图标也可以很快开</span><br><span class="line"></span><br><span class="line">　Window+D 桌面闪现 在看其他东西时如果老板来了就不用担心被骂了</span><br><span class="line"></span><br><span class="line">　Window+TAB 以三D效果显示切换窗口</span><br><span class="line"></span><br><span class="line">　Window+R window自带的录像功能</span><br><span class="line"></span><br><span class="line">　Window+R在按下osk 显示虚拟键盘 直接用鼠标点击键盘</span><br><span class="line"></span><br><span class="line">　Window++++++就可以放大屏幕</span><br><span class="line"></span><br><span class="line">　Windows+W窗口最小化</span><br><span class="line"></span><br><span class="line">　Ctrl+TAB可以在几个页面之间切换</span><br><span class="line"></span><br><span class="line">　Ctrl+shift+TAB是反向切换</span><br><span class="line"></span><br><span class="line">　Ctrl+w可以关闭当前页面</span><br><span class="line"></span><br><span class="line">　Ctrl+C复制</span><br><span class="line">　</span><br><span class="line">　Ctrl+V粘贴</span><br><span class="line"></span><br><span class="line">　Ctrl+A全选</span><br><span class="line"></span><br><span class="line">　Ctrl [ 缩小文字Ctrl ] 放大文字</span><br><span class="line"></span><br><span class="line">　Ctrl B 粗体 Ctrl I 斜体</span><br><span class="line"></span><br><span class="line">　Ctrl U 下划线</span><br><span class="line"></span><br><span class="line">　CtrlShift 输入法切换</span><br><span class="line"></span><br><span class="line">　Ctrl 空格 中英文切换</span><br><span class="line"></span><br><span class="line">　Ctrl 回车 QQ号中发送信息</span><br><span class="line"></span><br><span class="line">　Ctrl Home 光标快速移到文件头</span><br><span class="line"></span><br><span class="line">　Ctrl N：新建一个空文档。</span><br><span class="line"></span><br><span class="line">　Ctrl O(或Ctrl F12)：打开“打开”对话框。</span><br><span class="line"></span><br><span class="line">　Ctrl Backspace 启动关闭输入法</span><br><span class="line"></span><br><span class="line">·  Alt C 关闭窗口</span><br><span class="line"></span><br><span class="line">　Alt N 最小化当前窗口</span><br><span class="line"></span><br><span class="line">　Alt R 恢复最小化窗口</span><br><span class="line"></span><br><span class="line">　Alt X 最大化当前窗口</span><br><span class="line"></span><br><span class="line">　Alt M 移动窗口</span><br><span class="line"></span><br><span class="line">　Alt S 改变窗口大小</span><br><span class="line"></span><br><span class="line">　Alt Tab 两个程序交换</span><br><span class="line"></span><br><span class="line">　Alt F 打开文件菜单　　</span><br><span class="line"></span><br><span class="line">  Alt V 打开视图菜单</span><br><span class="line"></span><br><span class="line">　Alt E 打开编辑菜单　　</span><br><span class="line"></span><br><span class="line">  Alt I 打开插入菜单</span><br><span class="line"></span><br><span class="line">　Alt O 打开格式菜单　　</span><br><span class="line"></span><br><span class="line">  Alt T 打开工具菜单</span><br><span class="line"></span><br><span class="line">　Alt A 打开表格菜单　　</span><br><span class="line"></span><br><span class="line">  Alt W 打开窗口菜单</span><br><span class="line"></span><br><span class="line">　Alt H 打开帮助菜单　　</span><br><span class="line"></span><br><span class="line">  Alt 回车 查看文件属性</span><br><span class="line"></span><br><span class="line">　Alt 双击文件 查看文件属性</span><br><span class="line"></span><br><span class="line">　Alt X 关闭C语言</span><br><span class="line"></span><br><span class="line">　Shift 空格 半全角切换</span><br></pre></td></tr></table></figure>
+
             </div>
             <hr/>
 
@@ -656,7 +614,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://jamesbin-bit.github.io/2020/11/02/%E8%B6%85%E5%A3%B0%E6%B3%A2%E6%B5%8B%E8%B7%9D-python%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%AE%9E%E6%97%B6%E5%9B%BE%E5%83%8F%E7%BB%98%E5%88%B6/">https://jamesbin-bit.github.io/2020/11/02/%E8%B6%85%E5%A3%B0%E6%B3%A2%E6%B5%8B%E8%B7%9D-python%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%AE%9E%E6%97%B6%E5%9B%BE%E5%83%8F%E7%BB%98%E5%88%B6/</a>
+                    <a href="https://jamesbin-bit.github.io/2020/11/03/%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E7%94%B5%E8%84%91%E5%BF%AB%E6%8D%B7%E9%94%AE%EF%BC%8C%E4%B8%8D%E7%9C%8B%E5%90%8E%E6%82%94%E7%B3%BB%E5%88%97%EF%BC%81/">https://jamesbin-bit.github.io/2020/11/03/%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E7%94%B5%E8%84%91%E5%BF%AB%E6%8D%B7%E9%94%AE%EF%BC%8C%E4%B8%8D%E7%9C%8B%E5%90%8E%E6%82%94%E7%B3%BB%E5%88%97%EF%BC%81/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -694,8 +652,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Python%E9%A1%B9%E7%9B%AE/">
-                                    <span class="chip bg-color">Python项目</span>
+                                <a href="/tags/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86%E5%88%86%E4%BA%AB/">
+                                    <span class="chip bg-color">电脑知识分享</span>
                                 </a>
                             
                         </div>
@@ -1130,19 +1088,19 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/11/03/%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%85%A8%E7%94%B5%E8%84%91%E5%BF%AB%E6%8D%B7%E9%94%AE%EF%BC%8C%E4%B8%8D%E7%9C%8B%E5%90%8E%E6%82%94%E7%B3%BB%E5%88%97%EF%BC%81/">
+                <a href="/2020/11/03/STM32%E9%A9%B1%E5%8A%A8%E4%BA%BA%E4%BD%93%E6%84%9F%E5%BA%94%E6%A8%A1%E5%9D%97/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="史上最全电脑快捷键，不看后悔系列！">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="STM32驱动人体感应模块">
                         
-                        <span class="card-title">史上最全电脑快捷键，不看后悔系列！</span>
+                        <span class="card-title">STM32驱动人体感应模块</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            最全电脑快捷键，快来看看吧你值得拥有！
+                            人体感应模块的驱动，需要的可以看一下！
                         
                     </div>
                     <div class="publish-info">
@@ -1153,8 +1111,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86%E5%88%86%E4%BA%AB/" class="post-category">
-                                    电脑知识分享
+                            <a href="/categories/STM32%E5%B0%8F%E5%AE%9E%E9%AA%8C%E5%88%86%E4%BA%AB/" class="post-category">
+                                    STM32小实验分享
                                 </a>
                             
                             
@@ -1164,8 +1122,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86%E5%88%86%E4%BA%AB/">
-                        <span class="chip bg-color">电脑知识分享</span>
+                    <a href="/tags/STM32%E9%A1%B9%E7%9B%AE%E5%AE%9E%E9%AA%8C/">
+                        <span class="chip bg-color">STM32项目实验</span>
                     </a>
                     
                 </div>
@@ -1179,32 +1137,44 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/11/01/%E5%85%B3%E4%BA%8E%E6%88%91/">
+                <a href="/2020/11/02/%E8%B6%85%E5%A3%B0%E6%B3%A2%E6%B5%8B%E8%B7%9D-python%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%AE%9E%E6%97%B6%E5%9B%BE%E5%83%8F%E7%BB%98%E5%88%B6/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="我的个人简介">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="超声波测距+python数据处理+可视化实时图像绘制">
                         
-                        <span class="card-title">我的个人简介</span>
+                        <span class="card-title">超声波测距+python数据处理+可视化实时图像绘制</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            河南理工大学|机械电子工程|工控
+                            超声波一个特别好的练手实验，大家可以尝试一下！
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-01
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-02
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            JamesBin
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Python%E5%AE%9E%E6%88%98%E5%88%86%E4%BA%AB/" class="post-category">
+                                    Python实战分享
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python%E9%A1%B9%E7%9B%AE/">
+                        <span class="chip bg-color">Python项目</span>
+                    </a>
+                    
                 </div>
                 
             </div>
